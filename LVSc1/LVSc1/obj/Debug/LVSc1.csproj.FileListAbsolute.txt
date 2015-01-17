@@ -1,0 +1,6 @@
+C:\Users\BrianTerry\Desktop\practice\LVSc1\LVSc1\bin\Debug\LVSc1.exe.config
+C:\Users\BrianTerry\Desktop\practice\LVSc1\LVSc1\bin\Debug\LVSc1.exe
+C:\Users\BrianTerry\Desktop\practice\LVSc1\LVSc1\bin\Debug\LVSc1.pdb
+C:\Users\BrianTerry\Desktop\practice\LVSc1\LVSc1\obj\Debug\LVSc1.exe
+C:\Users\BrianTerry\Desktop\practice\LVSc1\LVSc1\obj\Debug\LVSc1.pdb
+C:\Users\BrianTerry\Desktop\practice\LVSc1\LVSc1\bin\Debug\TextFile1.txt

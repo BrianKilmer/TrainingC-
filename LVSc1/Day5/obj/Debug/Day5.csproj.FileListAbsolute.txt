@@ -1,0 +1,6 @@
+C:\Users\BrianTerry\Desktop\practice\LVSc1\Day5\bin\Debug\Day5.exe.config
+C:\Users\BrianTerry\Desktop\practice\LVSc1\Day5\bin\Debug\Day5.exe
+C:\Users\BrianTerry\Desktop\practice\LVSc1\Day5\bin\Debug\Day5.pdb
+C:\Users\BrianTerry\Desktop\practice\LVSc1\Day5\obj\Debug\Day5.csprojResolveAssemblyReference.cache
+C:\Users\BrianTerry\Desktop\practice\LVSc1\Day5\obj\Debug\Day5.exe
+C:\Users\BrianTerry\Desktop\practice\LVSc1\Day5\obj\Debug\Day5.pdb
