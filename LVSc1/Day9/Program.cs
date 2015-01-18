@@ -92,11 +92,6 @@ namespace Day9
             public string State { get; set; }
             public string Zip { get; set; }
         }
-        class Customer
-        {
-            public int CustomerID { get; set; }
-            public string Name { get; set; }
-        }
         
     }
 }
