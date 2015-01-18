@@ -141,18 +141,7 @@ namespace FifthColumn
             Console.WriteLine("");
             Console.WriteLine("Press return to continue...");
             Console.ReadLine();
-
-
-
-
-            Console.WriteLine("");
-            Console.WriteLine("Press return to continue...");
-            Console.ReadLine();
         }
-            
-           
-
-    
 
     }
 }

@@ -12,3 +12,5 @@ C:\Users\BrianTerry\Desktop\practice\Day8 Project\FifthColumn\FifthColumn\bin\De
 C:\Users\BrianTerry\Desktop\practice\Day8 Project\FifthColumn\FifthColumn\bin\Debug\FifthColumn.exe
 C:\Users\BrianTerry\Desktop\practice\Day8 Project\FifthColumn\FifthColumn\bin\Debug\FifthColumn.pdb
 C:\Users\BrianTerry\Desktop\practice\Day8 Project\FifthColumn\FifthColumn\obj\x86\Debug\FifthColumn.csprojResolveAssemblyReference.cache
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day8 Project\FifthColumn\FifthColumn\obj\x86\Debug\FifthColumn.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day8 Project\FifthColumn\FifthColumn\obj\x86\Debug\FifthColumn.pdb
