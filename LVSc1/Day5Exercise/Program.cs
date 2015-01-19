@@ -10,6 +10,7 @@ namespace Day5Exercise
     {
         static void Main(string[] args)
         {
+            /*
             List<Mutant> mutants = new List<Mutant>();
 
             PsychicMutant m1 = new PsychicMutant();
@@ -52,6 +53,19 @@ namespace Day5Exercise
             e2.Level = 5;
             e2.Region = 6;
             mutants.Add(e2);
+             * */
+
+
+            List<Mutant> mutants = new List<Mutant>() {
+                new PhysicalMutant() { CodeName="MindBender", IQ=100,Level=3,Strength=10},
+                new PhysicalMutant() { CodeName="Tester", IQ=120,Level=4,Strength=5},
+                new PhysicalMutant() { CodeName = "BoobooHead", IQ = 70, Level = 2, Strength = 20 },
+                new PhysicalMutant() { CodeName = "steelhead", IQ = 70, Level = 2, Strength = 20 },
+                new ElementalMutant() { CodeName = "wad", Region = 70, Level = 2 },
+                new ElementalMutant() { CodeName = "junkman", Region = 70, Level = 2 },
+            };
+
+            
 
             // generic type that we are setting our list to
             foreach (Mutant mutant in mutants)

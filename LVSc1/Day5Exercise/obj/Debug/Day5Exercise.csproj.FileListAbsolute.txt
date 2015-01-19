@@ -4,3 +4,9 @@ C:\Users\BrianTerry\Desktop\practice\LVSc1\Day5Exercise\bin\Debug\Day5Exercise.e
 C:\Users\BrianTerry\Desktop\practice\LVSc1\Day5Exercise\bin\Debug\Day5Exercise.pdb
 C:\Users\BrianTerry\Desktop\practice\LVSc1\Day5Exercise\obj\Debug\Day5Exercise.exe
 C:\Users\BrianTerry\Desktop\practice\LVSc1\Day5Exercise\obj\Debug\Day5Exercise.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day5Exercise\bin\Debug\Day5Exercise.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day5Exercise\obj\Debug\Day5Exercise.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day5Exercise\obj\Debug\Day5Exercise.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day5Exercise\bin\Debug\Day5Exercise.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day5Exercise\bin\Debug\Day5Exercise.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day5Exercise\obj\Debug\Day5Exercise.csprojResolveAssemblyReference.cache
