@@ -1,0 +1,6 @@
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day9-2\bin\Debug\Day9-2.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day9-2\bin\Debug\Day9-2.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day9-2\bin\Debug\Day9-2.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day9-2\obj\Debug\Day9-2.csprojResolveAssemblyReference.cache
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day9-2\obj\Debug\Day9-2.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LVSc1\Day9-2\obj\Debug\Day9-2.pdb

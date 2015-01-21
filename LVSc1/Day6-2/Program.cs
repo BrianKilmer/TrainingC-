@@ -15,13 +15,16 @@ namespace Day6_2
         {
 
             //step 1 handshake with the db
-            SqlConnection myConnection = new SqlConnection("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\DB2.mdf;Integrated Security = True;User Instance=True");
+            // SqlConnection myConnection = new SqlConnection("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\DB2.mdf;Integrated Security = True;User Instance=True");
+            SqlConnection myConnection = new SqlConnection("Data Source=OFFICE\\sqlexpress;Initial Catalog=Brian;Integrated Security=True");
+            
+
             //var conn = new OdbcConnection("Data Source=DB2.mdf");
             myConnection.Open();
 
             //step 2 specify the cmomand
             SqlCommand mycommand = myConnection.CreateCommand();
-            mycommand.CommandText = "select * from Customer";
+            mycommand.CommandText = "select top 10  * from Customers";
             mycommand.CommandType = System.Data.CommandType.Text;
 
             //mycommand.CommandText = "pr_GetCustomers";
@@ -35,7 +38,6 @@ namespace Day6_2
             {
                 Console.WriteLine(myReader[1] + "" + myReader[2]);
             }
-
          
             Console.ReadLine();
             myConnection.Close();
