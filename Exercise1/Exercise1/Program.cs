@@ -90,8 +90,10 @@ namespace Exercise1
             
 
             var x = (from c in str.ToLower()
+                     //IGrouping is an IEnumerable<TElement> with an associated Key
                     group c by c into a
-                    select new 
+                    // selecting into or 'projecting' a new anonymous type
+                     select new //anonymous bcs we have not specified a new what
                     { 
                         a.Key, Count = a.Count() 
                     }).OrderByDescending(y => y.Count)
@@ -102,7 +104,9 @@ namespace Exercise1
             {
                 if (Convert.ToString(thing.Key) != " ")
                 {
-                   Console.WriteLine("{0} : {1}", thing.Key, thing.Count); 
+                    //Console.WriteLine(thing.Key.GetType());
+                    //Console.WriteLine(thing.Count.GetType());
+                    Console.WriteLine("{0} : {1}", thing.Key, thing.Count); 
                 }
                 
             }
