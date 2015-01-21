@@ -1,0 +1,10 @@
+C:\Users\Robert Tabor\documents\visual studio 2010\Projects\LINQFromAndJoin\LINQFromAndJoin\bin\Debug\LINQFromAndJoin.exe
+C:\Users\Robert Tabor\documents\visual studio 2010\Projects\LINQFromAndJoin\LINQFromAndJoin\bin\Debug\LINQFromAndJoin.pdb
+C:\Users\Robert Tabor\documents\visual studio 2010\Projects\LINQFromAndJoin\LINQFromAndJoin\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Robert Tabor\documents\visual studio 2010\Projects\LINQFromAndJoin\LINQFromAndJoin\obj\x86\Debug\LINQFromAndJoin.exe
+C:\Users\Robert Tabor\documents\visual studio 2010\Projects\LINQFromAndJoin\LINQFromAndJoin\obj\x86\Debug\LINQFromAndJoin.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LINQFromAndJoin\LINQFromAndJoin\obj\x86\Debug\LINQFromAndJoin.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LINQFromAndJoin\LINQFromAndJoin\obj\x86\Debug\LINQFromAndJoin.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LINQFromAndJoin\LINQFromAndJoin\bin\Debug\LINQFromAndJoin.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LINQFromAndJoin\LINQFromAndJoin\bin\Debug\LINQFromAndJoin.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\LINQFromAndJoin\LINQFromAndJoin\obj\x86\Debug\LINQFromAndJoin.csprojResolveAssemblyReference.cache
