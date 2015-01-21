@@ -12,21 +12,21 @@ namespace Exercise1
         {
 
             //ex1-------------------------------------
-            using (SqlConnection myConnection = new SqlConnection("data source=db-dev;initial catalog=print;integrated security=True;User ID=iusr_print_sq;Password=Dasesa809"))
-            {
+            //using (SqlConnection myConnection = new SqlConnection("data source=db-dev;initial catalog=print;integrated security=True;User ID=iusr_print_sq;Password=Dasesa809"))
+            //{
 
-                myConnection.Open();
-                SqlCommand mycommand = myConnection.CreateCommand();
-                mycommand.CommandText = "select count(*) from product";
-                mycommand.CommandType = System.Data.CommandType.Text;
+            //    myConnection.Open();
+            //    SqlCommand mycommand = myConnection.CreateCommand();
+            //    mycommand.CommandText = "select count(*) from product";
+            //    mycommand.CommandType = System.Data.CommandType.Text;
 
-                Int32 count = (Int32)mycommand.ExecuteScalar();
+            //    Int32 count = (Int32)mycommand.ExecuteScalar();
 
-                Console.WriteLine("There are {0} products in the databse.", count);
-                Console.ReadLine();
+            //    Console.WriteLine("There are {0} products in the databse.", count);
+            //    Console.ReadLine();
 
-                //myConnection.Close();
-            }
+            //    //myConnection.Close();
+            //}
 
             //ex2-------------------------------------
 
@@ -58,8 +58,60 @@ namespace Exercise1
 
 
             Console.WriteLine();
+
+           //ex3 -------------------------------------
+            //Print out a count of each distinct character from an input string, sorted by count
+
+            Console.WriteLine("Type in a string and hit enter...");
+            string str = Console.ReadLine();
+
+            //while (str.Length > 0)
+            // {
+            //     Console.Write(str[0] + " : ");
+            //     int count = 0;
+            //     for (int j = 0; j < str.Length; j++)
+            //     {
+            //         if (str[0] == str[j])
+            //         {
+            //             count++;
+            //         }
+            //     }
+            //     Console.WriteLine(count); 
+            //     str = str.Replace(str[0].ToString(),string.Empty);  
+            // }
+            // Console.ReadLine();
+
+       
+
+
+             Console.WriteLine();
+             Console.WriteLine("=======================");
+             Console.WriteLine();
+            
+
+            var x = (from c in str.ToLower()
+                    group c by c into a
+                    select new 
+                    { 
+                        a.Key, Count = a.Count() 
+                    }).OrderByDescending(y => y.Count)
+                    
+                    ;
+
+            foreach (var thing in x)
+            {
+                if (Convert.ToString(thing.Key) != " ")
+                {
+                   Console.WriteLine("{0} : {1}", thing.Key, thing.Count); 
+                }
+                
+            }
+
+
+
             Console.ReadLine();
 
+           
 
         }
     }
