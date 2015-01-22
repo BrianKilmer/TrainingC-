@@ -10,101 +10,126 @@ namespace Day9Exercise
         static void Main(string[] args)
         {
             List<Order> orders = setupOrders();
-            
-            
+
+
 
             // PART 1
             Console.WriteLine("Get a list of all orders after December 8, 2007");
-            var od = orders.Where(o => o.OrderDate > DateTime.Parse("12/8/07"));
 
-            foreach (var o in od)
-            {
-                Console.WriteLine("{0} : {1}", o.OrderID,o.OrderDate); 
+            var o1 = from o in orders
+                        where o.OrderDate > DateTime.Parse("12/8/07")
+                        select o;
+
+            foreach (var o in o1)
+                Console.WriteLine("{0} : {1}", o.OrderID, o.OrderDate.ToShortDateString());
+                //----------------------------------------------------------
+                Console.ReadLine();
+
+                Console.WriteLine("=================================");
+                Console.WriteLine("EX 2");
+                Console.WriteLine("Same, this time retrieve only the orderID and the amount into an anonymous type.");
+
+                var o2 = from a2 in orders
+                            where a2.OrderDate > DateTime.Parse("12/8/07")
+                            select new { a2.OrderID, a2.OrderAmount };
+
+                foreach (var o in o2)
+                    Console.WriteLine("{0:} : {1:c}", o.OrderID, o.OrderAmount);
+                    Console.ReadLine();
+
+                Console.WriteLine("=================================");
+                Console.WriteLine("EX 3");
+                Console.WriteLine("Find the order with the largest order amount. ");
+                
+                var o3 = (from a3 in orders
+                            orderby a3.OrderAmount
+                            select a3).Last();
+
+                Console.WriteLine("{0} is the Higest amount", o3.OrderAmount.ToString());
+                Console.ReadLine();
+
+                Console.WriteLine("=================================");
+                Console.WriteLine("EX 4");
+
+                Console.WriteLine("Find all orders containing widgets.");
+
+                var o4 = from a4 in orders
+                            from oi in a4.OrderItems
+                            where oi.ProductName == "Widgets"
+                            //select a4;
+                            select new {a4.OrderID, oi.ProductName};
+
+                foreach (var o in o4)
+                    Console.WriteLine("{0:} : {1}", o.OrderID, o.ProductName);
+                
+                Console.ReadLine();
+
+                Console.WriteLine("=================================");
+                Console.WriteLine("EX 5");
+                Console.WriteLine("Sum up the value of all order items.");
+
+                var o5 = (from a5 in orders
+                            select a5.OrderAmount).Sum();
+                Console.WriteLine("{0} is the Sum of all orders", o5.ToString());
+
+                Console.ReadLine();
+
+                Console.WriteLine("=================================");
+                Console.WriteLine("EX 6");
+                Console.WriteLine("What is the average order total?");
+
+                var o6 = (from a6 in orders
+                            select a6.OrderAmount).Average();
+                Console.WriteLine("{0} is the Sum of all orders", o6.ToString());
+                Console.ReadLine();
+
+                Console.WriteLine("=================================");
+                Console.WriteLine("EX 7");
+                Console.WriteLine("How many orders have multiple items?");
+
+                var o7 = (from a7 in orders
+                            where a7.OrderItems.Count > 1
+                            select a7).Count();
+                         
+                Console.WriteLine("{0} orders have more than 1 item" , o7.ToString()); 
+                Console.ReadLine();
+
+                //
+
+                Console.WriteLine("Create a flat list of a new anonymous type using LINQ to project the fields OrderID, OrderItemID, ProductName of every order item");
+                Console.WriteLine("=================================");
+                Console.WriteLine("EX 8");
+
+                var o8 = from a8 in orders
+                            from oi in a8.OrderItems
+                            //select a4;
+                            select new { a8.OrderID, oi.OrderItemID, oi.ProductName, };
+
+                foreach (var item in o8)
+                {
+                    Console.WriteLine("{0} : {1} : {2} ", item.OrderID,item.OrderItemID,item.ProductName);  
+                }
+                
+
+                Console.ReadLine();
+                
+
+                Console.WriteLine("Create a new set of orders based on the existing orders ... BUT add 1000 to each OrderID AND set the OrderDate to Now.");
+                Console.WriteLine("(Bwahahah ... <evil laugh>.");
+                Console.WriteLine("=================================");
+                Console.WriteLine("EX 9");
+
+                var o9 = from a9 in orders
+                            select new Order { OrderID = a9.OrderID + 1000, CustomerName = a9.CustomerName, OrderItems = a9.OrderItems, BillingAddress = a9.BillingAddress, ShippingAddress = a9.ShippingAddress, OrderAmount = a9.OrderAmount, OrderDate = DateTime.Now};
+
+                foreach (var item in o9)
+                {
+                    Console.WriteLine( "{0} : {1}", item.OrderID, item.OrderDate);
+                }
+
+                Console.ReadLine();
             }
-            Console.ReadLine();
-            // TODO
-
-            Console.WriteLine("");
-
-
-            // PART 2
-
-            Console.WriteLine("Same, this time retrieve only the orderID and the amount into an anonymous type.");
-
-
-            // TODO
-
-
-            Console.WriteLine("");
-
-
-            // PART 3
-
-            Console.WriteLine("Find the order with the largest order amount. (HINT: we didn't cover orderby very much, but you'll need it.  Also, consider using the First() extension method.");
-
-
-            // TODO
-           
-            Console.WriteLine("");
-
-
-            // PART 4
-
-            Console.WriteLine("Find all orders containing widgets.");
-
-
-            // TODO
-
-
-            Console.WriteLine("");
-
-
-            // PART 5
-
-            Console.WriteLine("Sum up the value of all order items.");
-
-            // TODO
-
-            Console.WriteLine("");
-
-
-            // PART 6
-
-            Console.WriteLine("What is the average order total?");
-
-            // TODO
-
-            Console.WriteLine("");
-
-
-            // PART 7
-
-
-            Console.WriteLine("How many orders have multiple items?");
-
-            // TODO
-
-            Console.WriteLine("");
-
-
-            // PART 8
-
-            Console.WriteLine("Create a flat list of a new anonymous type using LINQ to project the fields OrderID, OrderItemID, ProductName of every order item");
-
-            // TODO
-
-            Console.WriteLine("");
-
-
-            // PART 9
-
-            Console.WriteLine("Create a new set of orders based on the existing orders ... BUT add 1000 to each OrderID AND set the OrderDate to Now.");
-            Console.WriteLine("(Bwahahah ... <evil laugh>.");
-
-            // TODO
-
-            Console.ReadLine();
-        }
+        
 
         static private List<Order> setupOrders()
         {
