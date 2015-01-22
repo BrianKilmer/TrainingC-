@@ -1,0 +1,10 @@
+C:\Users\Robert Tabor\AppData\Local\Temporary Projects\LINQProjection\bin\Debug\LINQProjection.exe
+C:\Users\Robert Tabor\AppData\Local\Temporary Projects\LINQProjection\bin\Debug\LINQProjection.pdb
+C:\Users\Robert Tabor\AppData\Local\Temporary Projects\LINQProjection\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Robert Tabor\AppData\Local\Temporary Projects\LINQProjection\obj\x86\Debug\LINQProjection.exe
+C:\Users\Robert Tabor\AppData\Local\Temporary Projects\LINQProjection\obj\x86\Debug\LINQProjection.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day 910\LINQProjection\LINQProjection\obj\x86\Debug\LINQProjection.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day 910\LINQProjection\LINQProjection\obj\x86\Debug\LINQProjection.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day 910\LINQProjection\LINQProjection\bin\Debug\LINQProjection.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day 910\LINQProjection\LINQProjection\bin\Debug\LINQProjection.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day 910\LINQProjection\LINQProjection\obj\x86\Debug\LINQProjection.csprojResolveAssemblyReference.cache

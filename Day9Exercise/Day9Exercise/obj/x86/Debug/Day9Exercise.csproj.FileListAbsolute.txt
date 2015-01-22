@@ -1,0 +1,10 @@
+C:\Users\Robert Tabor\Documents\Visual Studio 2010\Projects\Day9Exercise\Day9Exercise\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Robert Tabor\Documents\Visual Studio 2010\Projects\Day9Exercise\Day9Exercise\bin\Debug\Day9Exercise.exe
+C:\Users\Robert Tabor\Documents\Visual Studio 2010\Projects\Day9Exercise\Day9Exercise\bin\Debug\Day9Exercise.pdb
+C:\Users\Robert Tabor\Documents\Visual Studio 2010\Projects\Day9Exercise\Day9Exercise\obj\x86\Debug\Day9Exercise.exe
+C:\Users\Robert Tabor\Documents\Visual Studio 2010\Projects\Day9Exercise\Day9Exercise\obj\x86\Debug\Day9Exercise.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day9Exercise\Day9Exercise\obj\x86\Debug\Day9Exercise.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day9Exercise\Day9Exercise\obj\x86\Debug\Day9Exercise.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day9Exercise\Day9Exercise\bin\Debug\Day9Exercise.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day9Exercise\Day9Exercise\bin\Debug\Day9Exercise.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day9Exercise\Day9Exercise\obj\x86\Debug\Day9Exercise.csprojResolveAssemblyReference.cache

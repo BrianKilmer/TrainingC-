@@ -5,3 +5,8 @@ I:\Exercises\Exercise1\Exercise1\obj\Debug\Exercise1.exe
 I:\Exercises\Exercise1\Exercise1\obj\Debug\Exercise1.pdb
 I:\repos\TrainingC-\Exercise1\Exercise1\obj\Debug\Exercise1.exe
 I:\repos\TrainingC-\Exercise1\Exercise1\obj\Debug\Exercise1.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Exercise1\Exercise1\obj\Debug\Exercise1.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Exercise1\Exercise1\obj\Debug\Exercise1.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Exercise1\Exercise1\bin\Debug\Exercise1.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Exercise1\Exercise1\bin\Debug\Exercise1.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Exercise1\Exercise1\obj\Debug\Exercise1.csprojResolveAssemblyReference.cache
