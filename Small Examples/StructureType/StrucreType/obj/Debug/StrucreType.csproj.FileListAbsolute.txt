@@ -1,0 +1,6 @@
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StrucreType\StrucreType\bin\Debug\StrucreType.exe.config
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StrucreType\StrucreType\obj\Debug\StrucreType.csprojResolveAssemblyReference.cache
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StrucreType\StrucreType\bin\Debug\StrucreType.exe
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StrucreType\StrucreType\bin\Debug\StrucreType.pdb
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StrucreType\StrucreType\obj\Debug\StrucreType.exe
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StrucreType\StrucreType\obj\Debug\StrucreType.pdb

@@ -1,0 +1,6 @@
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SimpleEnum\SimpleEnum\bin\Debug\SimpleEnum.exe.config
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SimpleEnum\SimpleEnum\bin\Debug\SimpleEnum.exe
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SimpleEnum\SimpleEnum\bin\Debug\SimpleEnum.pdb
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SimpleEnum\SimpleEnum\obj\Debug\SimpleEnum.csprojResolveAssemblyReference.cache
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SimpleEnum\SimpleEnum\obj\Debug\SimpleEnum.exe
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SimpleEnum\SimpleEnum\obj\Debug\SimpleEnum.pdb

@@ -1,0 +1,6 @@
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Arrays\Arrays\bin\Debug\Arrays.exe.config
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Arrays\Arrays\bin\Debug\Arrays.exe
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Arrays\Arrays\bin\Debug\Arrays.pdb
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Arrays\Arrays\obj\Debug\Arrays.csprojResolveAssemblyReference.cache
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Arrays\Arrays\obj\Debug\Arrays.exe
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Arrays\Arrays\obj\Debug\Arrays.pdb

@@ -1,0 +1,6 @@
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\OutputParam\OutputParam\bin\Debug\OutputParam.exe.config
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\OutputParam\OutputParam\bin\Debug\OutputParam.exe
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\OutputParam\OutputParam\bin\Debug\OutputParam.pdb
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\OutputParam\OutputParam\obj\Debug\OutputParam.csprojResolveAssemblyReference.cache
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\OutputParam\OutputParam\obj\Debug\OutputParam.exe
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\OutputParam\OutputParam\obj\Debug\OutputParam.pdb
