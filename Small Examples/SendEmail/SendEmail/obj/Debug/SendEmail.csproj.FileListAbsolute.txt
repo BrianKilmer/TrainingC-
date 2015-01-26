@@ -4,3 +4,6 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SendEmail\SendEmail\bin\De
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SendEmail\SendEmail\obj\Debug\SendEmail.csprojResolveAssemblyReference.cache
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SendEmail\SendEmail\obj\Debug\SendEmail.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SendEmail\SendEmail\obj\Debug\SendEmail.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\SendEmail\SendEmail\bin\Debug\SendEmail.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\SendEmail\SendEmail\obj\Debug\SendEmail.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\SendEmail\SendEmail\obj\Debug\SendEmail.pdb
