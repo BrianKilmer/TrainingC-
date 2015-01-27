@@ -1,0 +1,44 @@
+﻿@model PartyInvites.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            @*an overload for this helper method, passing in a class attribute (for styling) *@
+            <p>Name: @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })</p>
+            <p>Email: @Html.TextBoxFor(x => x.Email)</p>
+            <p>Phone: @Html.TextBoxFor(x => x.Phone)</p>
+            <p>
+                Will you Attend?
+     
+                @Html.DropDownListFor(x => x.WillAttend, new[]
+                {
+                    new SelectListItem() {Text = "Yes, I'll be there",Value = bool.TrueString},
+                    new SelectListItem() {Text = "No, I can't come", Value = bool.FalseString}
+                }, "Choose an option", new { @class = "form-control" })
+         
+                @*
+                <select name="WillAttend" id="WillAttend" @class = "form-control">
+                    <option value="">Choose an option</option>
+                    <option value="true">Yes, I'll be there</option>
+                    <option value="false">No, I can't come</option>
+                </select>
+                *@          
+            </p>
+            <input type="submit" value="Submit RSVP" />
+        }
+    </div>
+</body>
+</html>

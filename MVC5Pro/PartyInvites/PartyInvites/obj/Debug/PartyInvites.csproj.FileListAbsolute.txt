@@ -1,0 +1,36 @@
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\PartyInvites.dll.config
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\PartyInvites.dll
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\PartyInvites.pdb
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Helpers.dll
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Mvc.dll
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Razor.dll
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.Deployment.dll
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.dll
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.Razor.dll
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Razor.xml
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.xml
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.Deployment.xml
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.Razor.xml
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Helpers.xml
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Mvc.xml
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\obj\Debug\PartyInvites.csprojResolveAssemblyReference.cache
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\obj\Debug\PartyInvites.dll
+C:\Users\BrianTerry\Desktop\C# Web\MVC5Pro\PartyInvites\PartyInvites\obj\Debug\PartyInvites.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\PartyInvites.dll.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\PartyInvites.dll
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\PartyInvites.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Helpers.dll
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Mvc.dll
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Razor.dll
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.Deployment.dll
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.dll
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.Razor.dll
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Razor.xml
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.xml
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.Deployment.xml
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Webpages.Razor.xml
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Helpers.xml
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\bin\System.Web.Mvc.xml
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\obj\Debug\PartyInvites.csprojResolveAssemblyReference.cache
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\obj\Debug\PartyInvites.dll
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\MVC5Pro\PartyInvites\PartyInvites\obj\Debug\PartyInvites.pdb
