@@ -1,0 +1,676 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Courier New;}{\f1\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 6.3.9600}\viewkind4\uc1 
+\pard\tx959\tx1918\tx2877\tx3836\tx4795\tx5754\tx6713\tx7672\tx8631\f0\fs20 Data Types (CS-ASP_007)\par
+=======================\par
+Comments:  // Single line ... /* Multiline */\par
+\par
+string => alphanumeric (defaults to "")\par
+int => 2 billion to -2 billion (defaults to 0)\par
+double => fractional value (defaults to 0.0)\par
+bool => true or false (defaults to false)\par
+\par
+More: {{\field{\*\fldinst{HYPERLINK http://is.gd/data_types }}{\fldrslt{http://is.gd/data_types\ul0\cf0}}}}\f0\fs20\par
+\par
+\par
+Data Type Conversion (CS-ASP_008)\par
+=================================\par
+Implicit conversions - smaller type to larger type\par
+without data loss, "upcasting"\par
+\par
+Explicit conversions - require developer intervention,\par
+possibility of data loss, "downcasting", either in \par
+the form of cast or using a helper method.\par
+\par
+Casting numbers:\par
+int myInteger = (int)myDouble;\par
+\par
+Numbers to strings:\par
+string myString = myInteger.ToString();\par
+\par
+String to Numbers:\par
+int myInteger = int.Parse(myString);\par
+\par
+More: {{\field{\*\fldinst{HYPERLINK http://is.gd/datatype_conversion }}{\fldrslt{http://is.gd/datatype_conversion\ul0\cf0}}}}\f0\fs20\par
+\par
+\par
+Arithmetic Operators (CS-ASP_009)\par
+=================================\par
+= NOT equality, it's assignment\par
+\par
+Math Operators: + - * /\par
+\par
+Addition Assignment\par
+total = total + 5;\par
+total += 5;\par
+\par
+Increment Operator:  i++;\par
+Decrement Operator:  i--;\par
+\par
+Beware of order of precedence (use parenthesis)\par
+Beware of down casting (you'll lose precision)\par
+Beware of overflow (user bigger types)\par
+\par
+To make overflow throw an exception:\par
+\par
+checked \par
+\{\par
+  // some arithmetic operation\par
+  // that could potentially overflow\par
+\}\par
+\par
+C# Syntax (CS-ASP_010)\par
+======================\par
+Operands - variable names, object / server control \par
+names, literals - "Nouns" (you name these)\par
+\par
+Operators - "Verbs ... they act on the operands.\par
+\par
+{{\field{\*\fldinst{HYPERLINK http://is.gd/operators }}{\fldrslt{http://is.gd/operators\ul0\cf0}}}}\f0\fs20\par
+\par
+Expressions - One or more operands and zero or more \par
+operators that evaluate to a single value\par
+\par
+{{\field{\*\fldinst{HYPERLINK http://is.gd/expressions }}{\fldrslt{http://is.gd/expressions\ul0\cf0}}}}\f0\fs20\par
+\par
+Statements - A complete instruction - assignment of an \par
+expression to a variable, an increment/ decrement, etc.\par
+\par
+{{\field{\*\fldinst{HYPERLINK http://is.gd/statement }}{\fldrslt{http://is.gd/statement\ul0\cf0}}}}\f0\fs20\par
+\par
+Statements must end in a semi-colon  ;\par
+Whitespace is ignored (use for humans)\par
+\par
+\par
+Conditional if ... else if ... else Statement (CS-ASP_011)\par
+==========================================================\par
+= Assignment\par
+== Equality\par
+\par
+if (a == b)\par
+\{\par
+  // execute when the expression is true\par
+\}\par
+else\par
+\{\par
+  // executes when the expression is false\par
+\}\par
+\par
+... or ... evaluate other mutually exclusively options:\par
+\par
+if (a == b) \{ // some code \}\par
+else if (a == c) \{ // some code \}\par
+else if (a == d) \{ // some code \}\par
+else \{ // catch all \}\par
+\par
+CheckBox Server Control = Checked prop is bool\par
+\par
+RadioButton Server Control = GroupName prop groups \par
+them together, check prop is bool\par
+\par
+\par
+Conditional Ternary Operator (CS-ASP_012)\par
+=========================================\par
+Shortcut for evaluating an expression and\par
+returning a result.\par
+result = (a == b) ? "Equal" : "Not Equal";\par
+\par
+Comparison and Logical Operator (CS-ASP_013)\par
+============================================\par
+Comparison Operators\par
+used for conditional statements\par
+==\par
+!= \par
+< >\par
+<= >=\par
+!someBooleanValue - means NOT is true\par
+\par
+Logical Operators\par
+used to combine multiple expressions / evaluation\par
+\par
+&& - AND\par
+|| - OR\par
+\par
+Combine with parenthesis ( ) for order of precendence\par
+\par
+\par
+Working with Dates and Times (CS-ASP_014)\par
+=========================================\par
+\par
+Creating new DateTime objects\par
+DateTime myDateTime = DateTime.Now;\par
+DateTime myDateTime = DateTime("12/7/1969");\par
+\par
+Formatting ... many options:\par
+myDateTime.To_____()\par
+\par
+Retrieving Parts:\par
+myDateTime.Year // int\par
+myDateTime.Hour // int\par
+myDateTime.DayOfWeek // "Monday"\par
+myDateTime.DayOfYear // int 175\par
+\par
+DateTime Math:\par
+myDateTime.AddHours(3)\par
+myDateTime.AddMinutes(-5)\par
+\par
+"Chaining" = using multiple helper methods\par
+together with the dot . operator\par
+myDateTime.AddHours(3).AddMinutes(-5).ToString()\par
+\par
+\par
+Working with Spans of Time (CS-ASP_015)\par
+=======================================\par
+Create and initialize new TimeSpans\par
+\par
+// Days.Hours:Minutes:Seconds.Milliseconds\par
+TimeSpan myTimeSpan = TimeSpan.Parse("1.2:3:30.5");\par
+\par
+DateTime myBirthday = DateTime.Parse("12/7/1969");\par
+TimeSpan myAge = DateTime.Now.Subtract(myBirthday);\par
+\par
+More info at {{\field{\*\fldinst{HYPERLINK http://is.gd/timespan }}{\fldrslt{http://is.gd/timespan\ul0\cf0}}}}\f0\fs20\par
+\par
+Get individual parts\par
+myAge.Hours\par
+myAge.Seconds\par
+\par
+... or get TOTAL elapsed time\par
+as a double representing both\par
+the number of days / hours / etc.\par
+AND fractional values representing\par
+"left overs".\par
+\par
+myTimeSpan.TotalDays // double\par
+myTimeSpan.TotalHours // double\par
+\par
+\par
+Formatting Strings (CS-ASP_019)\par
+===============================\par
+Concenate Strings\par
++ +=\par
+\par
+Format Strings\par
+String.Format("Hello \{0\}.  You are from \{1\}", "Bob", "Chicago")\par
+\par
+Format Numbers\par
+String.Format("Reference Code: \{0:000_000-0\}", 1234567)\par
+123_456-7\par
+\par
+Formatting Dates\par
+{{\field{\*\fldinst{HYPERLINK http://is.gd/formattingdates }}{\fldrslt{http://is.gd/formattingdates\ul0\cf0}}}}\f0\fs20\par
+String.Format("REference Date: \{0:ddd - d, MM, yyyy\}", someDate)\par
+Tue - 5, 07, 2014\par
+\par
+Formatting Currency\par
+{{\field{\*\fldinst{HYPERLINK http://is.gd/formattingcurrency }}{\fldrslt{http://is.gd/formattingcurrency\ul0\cf0}}}}\f0\fs20\par
+String.Format("Total: \{0:C\}", totalAmount);\par
+$50,000.00\par
+\par
+\par
+Single Dimensional Arrays (CS-ASP_021)\par
+======================================\par
+Indexes vs. Elements\par
+Accessor vs. Stored Values\par
+Indexes are zero based\par
+\par
+Declaring Arrays\par
+string[] myArray = new string[3];\par
+\par
+Declaring and Initializing Arrays\par
+string[] myArray = new string[3] \{ "Moe", "Larry", "Curly" \};\par
+\par
+Setting / Getting Values\par
+string myString = myArray[1]; // Retrieve the second element\par
+myArray[0] = myString; // Sets first element\par
+\par
+Multi-Dimensional Arrays (CS-ASP_022)\par
+=====================================\par
+Same as single dimensional ... just requires\par
+more indexes (in dimensions) to get to the element\par
+\par
+double[,] myArray = new double[2,3]; // contains 6 elements\par
+int[,,] rubicsCube = new int[3,3,3] // contains 27 elements\par
+\par
+rubicsCube[0,1,2] = 42;\par
+myInteger = rubicsCube[0,1,2];\par
+\par
+\par
+Changing the Length of an Array (CS-ASP_023)\par
+==============================================\par
+Arrays are immutable = cannot be changed in memory\par
+HOWEVER .NET Framework providers helper methods to\par
+resize an array ... creates a new array and copies\par
+the old values into it.\par
+\par
+Array.Resize(ref myArray, myArray.Length + 1);\par
+\par
+// Get the highest index:\par
+int highestIndex = myArray.GetUpperBound(0);\par
+// 0 = dimension we want to retrieve the \par
+// upper boundary for\par
+\par
+// Arrays have other helper methods \par
+myArray.Sum()\par
+myArray.Min()\par
+myArray.Max()\par
+myArray.Average()\par
+\par
+Array.Sort(myArray)\par
+Array.Reverse(myArray)\par
+\par
+\par
+Looping with the for Iteration Statement (CS-ASP_026)\par
+=====================================================\par
+\par
+Snippet:  for [tab] [tab]\par
+Then you can tab through the replaceable bits, hit enter to \par
+start writing code in the code block body.\par
+\par
+for (int i = 0; i < 10; i++)\par
+\{\par
+  // Your code here\par
+\}\par
+\par
+i - Any variable name\par
+\par
+1st part - counter declaration, can be initialized to any number\par
+2nd part - condition, can be any expression that equates to a bool\par
+3rd part - increment i++ / decrement i--, can step more than 1 using +=,\par
+\par
+string[] names = new string[] \{ "Wolverine", "Cyclops", "Professor X", "Phoenix" \};\par
+\par
+for (int i = 0; i < names.Length; i++)\par
+\{\par
+  // Cna search for a specific value\par
+  if (names[i] == "Professor X")\par
+  \{\par
+     // Do something here\par
+     // Can break out of additional iterations if you need to\par
+     break;\par
+  \}\par
+\}\par
+\par
+\par
+Looping with the while and do ... while Iteration Statements (CS-ASP_027)\par
+=========================================================================\par
+\par
+Random randon = new Random();\par
+// random.Next(lowerBounds, upperBounds)\par
+random.Next(1, 100); // returns a value between 1 and 100\par
+\par
+// If someExpression is already false, this will never execute\par
+while(someExpression) \{\par
+  // Code that would affect whether\par
+  // someExpression is true or false\par
+\}\par
+\par
+// If someExpression is already false, this will run AT LEAST ONCE\par
+do \{\par
+  // Code that would affect whether\par
+  // someExpression is true or false\par
+\} while (someExpression)\par
+\par
+\par
+\par
+Creating Overloaded MEthods (CS-ASP_031)\par
+========================================\par
+Different METHOD SIGNATURE, but same basic function.\par
+METHOD SIGNATURE ... the number and type of parameters\par
+Can have different return types.\par
+\par
+Creating Optional Parameters (CS-ASP_032)\par
+=========================================\par
+Optional parameters provide default values when you define\par
+the method.  So, if you don't supply a value, the default\par
+will be used.\par
+\par
+private void myMethod(string myRequiredParam,\par
+                     int myOptionalParam = 1,\par
+                     int myOtherOptionalParam = 5);\par
+\par
+// Can be called ...\par
+\par
+myMethod("Hello Required Param!");\par
+\par
+// or ...\par
+\par
+myMethod("Hello Required Param!", 100);\par
+\par
+// or ... \par
+\par
+myMethod("Hello Required Param!", 100, 500);\par
+\par
+// You cannot skip an optional parameter:\par
+\par
+myMethod("Hello Required Param!", , 500); // ERROR\par
+\par
+\par
+Passing Named Arguments Into Input Parameters (CS-ASP_033)\par
+=========================================================\par
+Allow us to send in parameter arugments OUT OF ORDER!\par
+We just previx the input parameter argument with the name\par
+of the parameter we're passing in, a colon, then the value:\par
+\par
+myMethod(myOtherOptionalParam: 500,\par
+         myRequiredParam: "Hello Required PAram",\par
+         myOptionalParam: 100);\par
+\par
+// You still have to pass in REQUIRED parameters.\par
+\par
+\par
+Creating Methods with Output Parameters (CS-ASP_034)\par
+=====================================================\par
+Allows you to return a value the normal way AND\par
+return a value via a method parameter:\par
+\par
+private bool myMethod(string myRequiredParam,\par
+                      out int myOptionalParam) \{ \}\par
+\par
+\par
+int myValue = 0;\par
+if (myMethod("Some required text", out myValue)) return "Hello World!";\par
+\par
+\par
+Manipulating Strings (CS-ASP_035)\par
+=================================\par
+\par
+// Escape double quotes\par
+string myString = "This is a double quote: \\".";\par
+\par
+// Accessing a specific char:\par
+myString[2]\par
+\par
+// StartsWith(), EndsWith(), Contains()\par
+// Check to see if a given string has a set of \par
+// characters beginning, end or somewhere inside.\par
+// Return true / false\par
+\par
+// IndexOf()\par
+// Find the index for one string inside of \par
+// another string.\par
+int myIndex = myString.IndexOf("howdy");\par
+\par
+// Insert(), Remove()\par
+// Insert adds characters starting at a given index\par
+// Remove removes characters starting at a given\par
+// index, and all the way through the length you \par
+// input.\par
+\par
+// Substring()\par
+// Retrieve characters beginning at a given index\par
+// all thr way through the length you input.\par
+\par
+// Trim(), TrimStart(), TrimEnd()\par
+// Remove space characters both, or just the start\par
+// or the end of the string.\par
+\par
+// PadLeft(), PadRight()\par
+// Allow you to specify a length for a string\par
+// and a character to pad the string with if its\par
+// length is less than the specified length.\par
+myString = someValue.PadLeft(10, '#');\par
+// Notice that we're inputting a char, not a string\par
+// therefore we have to use a single quote ' not\par
+// a double quote.\par
+\par
+// ToUpper(), ToLower()\par
+// Important!  Compare two strings regardless of\par
+// the case, beacuse in C#, two strings with\par
+// different cases are NOT equal.\par
+\par
+\par
+// Replace()\par
+// Replace every occurance of one string with\par
+// some other string.\par
+myString.Replace("$$$", myValue);\par
+\par
+// Split()\par
+// Take a string and split it into many strings\par
+// and store them in a string array.\par
+string[] names = myString.Split(';');\par
+\par
+// Concatenating strings, immutability\par
+// StringBuilder - memory efficient way of concatenating strings.\par
+\par
+\par
+Introduction to Classes and Objects (CS-ASP_036)\par
+================================================\par
+Class is a code block that defines a data type.\par
+An Object is an instance of a Class.\par
+Metaphors:\par
+Blueprint vs. Houses\par
+Recipe vs. Cupcakes\par
+Pattern vs. Bluejeans\par
+Cookie cutter vs. Cookes\par
+\par
+Classes have members, like Properties and Methods.\par
+\par
+Properties define the attributes that are set on\par
+an instance of the class / represent the "state" \par
+of the object.  You can set (assign) and get\par
+(retrieve) properties values on an object.\par
+\par
+Methods define actions an instance of a class\par
+can perform, usually on the object instance itself.\par
+\par
+You can create an instance of a class using the \par
+new keyword.  Think: "factory".\par
+\par
+You can access the members of an object by using\par
+the member access operator, the dot (.)\par
+\par
+Conceptually, classes are dleegated a responsibility\par
+in the system or represent some domain concept\par
+in the system.\par
+\par
+Classes are ultimately custom data types, more complex\par
+than the simple data types we've worked with.\par
+Therefore you can use them anywhere you use other\par
+data types (like as input parameters opr return\par
+values from a method.)\par
+\par
+class Car \{\par
+\par
+\}\par
+\par
+Auto Implemented Properties - simple properties\par
+prop [tab] [tab] [enter] [enter]\par
+\par
+this keyword - Access a member ofthe current instance\par
+of the class.\par
+\par
+public void MyMethod() \par
+\{\par
+  this.Year = 1976;\par
+\}\par
+\par
+\par
+\par
+\par
+Creating Class Files, Creating Cohesive Classes and Code Navigation (CS-ASP_037)\par
+================================================================================\par
+Prefer more classes w/ narrowly defined responsibilities\par
+Prefer to put each class in its own file\par
+Prefer high cohesion - similarity / signleness of purpose of the class members\par
+To achieve high cohesion, a rule of thumb: try to make your classes fit on \par
+one "screen" of your IDE (no scrolling required)\par
+\par
+\par
+Understanding Object References and Object Lifetime (CS-ASP_038)\par
+================================================================\par
+An object reference variable holds a reference to an instantied object \par
+in the computer's memory.\par
+\par
+MyClass myObject;\par
+\par
+The new keyword creates an instanceof the class and returns the addres of \par
+object in memory to the reference variable.\par
+\par
+myObject = new MyClass();\par
+\par
+More than one object reference variable can hold an address to the object in memory.\par
+\par
+MyClass myOtherObjectReference = myObject;\par
+\par
+Each time a new reference is added, the reference count increases by one.  Each time\par
+an object reference variable goes out of scope or is set to null, the reference\par
+count decreases by one.\par
+\par
+If the reference count is zero, the .NET Framework Runtime's Garbage Collector\par
+removes the objet from memory at an indeterminate point in time in the future. You\par
+can take control of the finalization process and even handle events just before the\par
+object is removed.  See: "deterministic finalization".\par
+\par
+\par
+Understanding the .NET Framework and Compilation (CS-ASP_039)\par
+=============================================================\par
+The .NET Framework consists of:\par
+\par
+- Runtime (Common Language Runtime, CLR) "protective bubble", manages memory,\par
+protects the user's machine, etc.\par
+\par
+- .NET Framework Class Library (FCL, Base Class Library, BCL) - thousands\par
+of classes built by Microsoft for every imaginable purpose.\par
+\par
+- Compilers (C# compiler, VB compiler) - turns your human readable source code into\par
+Microsoft Intermediate Language (MSIL, IL) and packaged into a .NET assembly\par
+(.exe - executable, or .dll - class library)\par
+\par
+- Many other tools and features\par
+\par
+Initial compilation to Intermediate Language, then a second compilation \par
+JIT - Just In Time compilation - an optimized version of the assembly for the\par
+specific hardware and software. Happens at first request on that computer.\par
+\par
+\par
+Undersatnding Namespaces and the unsing Directive (CS-ASP_040)\par
+===============================================================\par
+Namespaces disambiguate class names inside of class libraries or applications.\par
+\par
+You must rreference class names by their full name:\par
+\par
+System.Text.Stringbuilder sb = new System.Text.StringBuilder();\par
+\par
+... or, you can employ a using directive at the top of the code file to\par
+instruct the compiler to look in those namespaces to find the class\par
+ that is referenced.\par
+\par
+using System.Text;\par
+. . . \par
+StringBuilder sb = new StringBuilder();\par
+\par
+You must always do this if the code you're writing is outside of \par
+the namespace of the class you want to use, even if it's in the same\par
+project.\par
+\par
+Default namespace defined in Project Properties (right-clicking on \par
+Poject name in Solution Explorer, select Properties ...)\par
+\par
+Creating Class Libraries and Adding Reference to Assemblies (CS-ASP_041)\par
+========================================================================\par
+Class Library project - creates a .dll that can be referenced in other projects.\par
+\par
+Add a Reference - the FCL is split into tiny pieces, and you must reference\par
+the assemblies that contain the parts of the library you want to use.\par
+\par
+Right-click project's References node in Solution Explorer, select Add Reference\par
+\par
+\par
+\par
+Accessibility Modifiers, Fields and Properties (CS-ASP_042)\par
+============================================================\par
+{{\field{\*\fldinst{HYPERLINK http://v.gd/access }}{\fldrslt{http://v.gd/access\ul0\cf0}}}}\f0\fs20\par
+\par
+Public - Class or member can be accessed by any code\par
+Private - Class or member can only be accessed by parent class\par
+Protected - Class or member can only be accessed by parent class or derived class\par
+Internal - Class or member can only be accessed by code inside the same assembly\par
+\par
+Classes are internal by default\par
+Methods and properties are private by default\par
+\par
+Encapsulation - hiding implementation behind npublic interfaces, reduces coupling\par
+increases plug-ability / resuability, maintainability, etc.\par
+\par
+private fields have two purposes:\par
+(1) reference to object or variable that used for internal implementation of class\par
+(2) hold the state of an object, backing field for public property\par
+\par
+propfull [tab] [tab]\par
+\par
+private int myField;\par
+public int MyProperty\par
+\{\par
+  get \{ return myField; \}\par
+  set \{ \par
+     if (value > 100)\par
+       myField = value;\par
+     else\par
+       // tell the caller that they can't do this\par
+  \}\par
+\}\par
+\par
+Full property definition and private fields to control\par
+access to private fields / state of the object.\par
+\par
+\par
+propg [tab] [tab]\par
+\par
+public int MyProperty \{ get; private set; \}\par
+\par
+Restricts setting of property to just the class' internal implementation\par
+\par
+\par
+Creating Constructor Methods (CS-ASP_043)\par
+=========================================\par
+Constructors are called at the moment of instantiation.\par
+Used to put the new instance of the class into a valid state.\par
+public class Foo\par
+\{\par
+  public Foo() \par
+  \{\par
+   ...\par
+  \}\par
+\}\par
+Whether you define it or not, there's a default constructor.\par
+You can override the default (no input parameters) or \par
+overload the constructor to allow the user to set the new \par
+instance to a valid state.\par
+\par
+\par
+Naming Conventions for Identifiers (CS-ASP_044)\par
+===============================================\par
+PascalCase - public\par
+camelCase - private, protected\par
+\par
+Public classes, methods and properties - PascalCase\par
+Private helper methods, input parameters - camelCase\par
+Locally scoped variables - camelCase\par
+Private field - camelCase prefixed w/ underscore: _firstName\par
+\par
+Choose long, memorable, understandable names\par
+that convey meaning / intent.\par
+\par
+\par
+\par
+Static versus Instance Members (CS-ASP_045)\par
+===========================================\par
+Static members - no instance of the class required to call method\par
+\par
+Instance member - must create an instance w/ new keyword to call\par
+methods and properties\par
+\par
+Can mix both in the same class, but can't reference instance\par
+members from inside of static members.\par
+\par
+Classes can be decaoted w/ static keyword ... all members\par
+must be static, can't create a new instance of that class,\par
+\par
+System.Math\par
+\par
+{{\field{\*\fldinst{HYPERLINK http://v.gd/static }}{\fldrslt{http://v.gd/static\ul0\cf0}}}}\f0\fs20\par
+
+\pard\sa200\sl276\slmult1\f1\fs22\lang9\par
+}
+ 

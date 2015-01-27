@@ -1,0 +1,52 @@
+﻿@model PartyInvites.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+        @{
+            try
+            {
+                WebMail.SmtpServer = "192.168.131.45";
+                WebMail.SmtpPort = 25;
+                WebMail.EnableSsl = false;
+               // WebMail.UserName = "mySmtpUsername";
+               // WebMail.Password = "mySmtpPassword";
+                WebMail.From = Model.Email;
+
+                WebMail.Send("bkilmer@outreach.com", "RSVP Notification",
+                    Model.Name + " is " + ((Model.WillAttend ?? false) ? "" : "not")
+                        + "attending");
+
+            }
+            catch (Exception)
+            {
+                @:<b>Sorry - we couldn't send the email to confirm your RSVP.</b>
+            }
+        }
+
+        <div class="text-center">
+            Thank you @Model.Name <br />
+            <div class="lead">
+                @if (@Model.WillAttend == true)
+                {
+                    @:Glad you can attend!<br /> You will be contacted shortly at @ViewBag.Email
+                     
+                }
+                else
+                {
+                    @:Sorry you can't make it
+                }
+            </div>
+        </div>
+
+</body>
+</html>
