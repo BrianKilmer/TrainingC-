@@ -1,0 +1,6 @@
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\ByValueByReference\ByValueByReference\bin\Debug\ByValueByReference.exe.config
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\ByValueByReference\ByValueByReference\bin\Debug\ByValueByReference.exe
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\ByValueByReference\ByValueByReference\bin\Debug\ByValueByReference.pdb
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\ByValueByReference\ByValueByReference\obj\Debug\ByValueByReference.csprojResolveAssemblyReference.cache
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\ByValueByReference\ByValueByReference\obj\Debug\ByValueByReference.exe
+C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\ByValueByReference\ByValueByReference\obj\Debug\ByValueByReference.pdb
