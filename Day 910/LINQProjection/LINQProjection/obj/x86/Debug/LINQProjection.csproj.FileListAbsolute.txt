@@ -8,3 +8,5 @@ C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day 910\LINQProjection\LINQProjecti
 C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day 910\LINQProjection\LINQProjection\bin\Debug\LINQProjection.exe
 C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day 910\LINQProjection\LINQProjection\bin\Debug\LINQProjection.pdb
 C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Day 910\LINQProjection\LINQProjection\obj\x86\Debug\LINQProjection.csprojResolveAssemblyReference.cache
+I:\repos\TrainingC-\Day 910\LINQProjection\LINQProjection\obj\x86\Debug\LINQProjection.exe
+I:\repos\TrainingC-\Day 910\LINQProjection\LINQProjection\obj\x86\Debug\LINQProjection.pdb
