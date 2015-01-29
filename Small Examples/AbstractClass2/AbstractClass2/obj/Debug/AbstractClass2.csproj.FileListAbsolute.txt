@@ -4,3 +4,6 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\AbstractClass2\AbstractCla
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\AbstractClass2\AbstractClass2\obj\Debug\AbstractClass2.csprojResolveAssemblyReference.cache
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\AbstractClass2\AbstractClass2\obj\Debug\AbstractClass2.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\AbstractClass2\AbstractClass2\obj\Debug\AbstractClass2.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\AbstractClass2\AbstractClass2\bin\Debug\AbstractClass2.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\AbstractClass2\AbstractClass2\obj\Debug\AbstractClass2.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\AbstractClass2\AbstractClass2\obj\Debug\AbstractClass2.pdb

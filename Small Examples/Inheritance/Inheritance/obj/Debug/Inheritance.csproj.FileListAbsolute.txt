@@ -4,3 +4,9 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Inheritance\Inheritance\bi
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Inheritance\Inheritance\obj\Debug\Inheritance.csprojResolveAssemblyReference.cache
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Inheritance\Inheritance\obj\Debug\Inheritance.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Inheritance\Inheritance\obj\Debug\Inheritance.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Inheritance\Inheritance\bin\Debug\Inheritance.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Inheritance\Inheritance\obj\Debug\Inheritance.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Inheritance\Inheritance\obj\Debug\Inheritance.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Inheritance\Inheritance\bin\Debug\Inheritance.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Inheritance\Inheritance\bin\Debug\Inheritance.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Inheritance\Inheritance\obj\Debug\Inheritance.csprojResolveAssemblyReference.cache

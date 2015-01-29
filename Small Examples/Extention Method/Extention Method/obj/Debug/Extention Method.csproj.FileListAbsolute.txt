@@ -3,3 +3,9 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Extention Method\Extention
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Extention Method\Extention Method\bin\Debug\Extention Method.pdb
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Extention Method\Extention Method\obj\Debug\Extention Method.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Extention Method\Extention Method\obj\Debug\Extention Method.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Extention Method\Extention Method\bin\Debug\Extention Method.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Extention Method\Extention Method\obj\Debug\Extention Method.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Extention Method\Extention Method\obj\Debug\Extention Method.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Extention Method\Extention Method\bin\Debug\Extention Method.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Extention Method\Extention Method\bin\Debug\Extention Method.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Extention Method\Extention Method\obj\Debug\Extention Method.csprojResolveAssemblyReference.cache

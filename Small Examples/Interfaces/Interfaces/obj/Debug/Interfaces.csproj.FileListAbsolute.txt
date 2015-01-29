@@ -4,3 +4,9 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Interfaces\Interfaces\bin\
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Interfaces\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Interfaces\Interfaces\obj\Debug\Interfaces.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\Interfaces\Interfaces\obj\Debug\Interfaces.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Interfaces\Interfaces\bin\Debug\Interfaces.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Interfaces\Interfaces\obj\Debug\Interfaces.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Interfaces\Interfaces\obj\Debug\Interfaces.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Interfaces\Interfaces\bin\Debug\Interfaces.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Interfaces\Interfaces\bin\Debug\Interfaces.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\Interfaces\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache

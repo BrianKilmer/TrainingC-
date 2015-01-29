@@ -4,3 +4,9 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SimpleClass\SimpleClass\bi
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SimpleClass\SimpleClass\bin\Debug\SimpleClass.pdb
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SimpleClass\SimpleClass\obj\Debug\SimpleClass.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\SimpleClass\SimpleClass\obj\Debug\SimpleClass.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\SimpleClass\SimpleClass\bin\Debug\SimpleClass.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\SimpleClass\SimpleClass\obj\Debug\SimpleClass.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\SimpleClass\SimpleClass\obj\Debug\SimpleClass.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\SimpleClass\SimpleClass\bin\Debug\SimpleClass.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\SimpleClass\SimpleClass\bin\Debug\SimpleClass.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\SimpleClass\SimpleClass\obj\Debug\SimpleClass.csprojResolveAssemblyReference.cache

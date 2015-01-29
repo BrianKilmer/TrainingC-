@@ -17,6 +17,7 @@ namespace Arrays
             foreach (int i in numbers)
                 Console.WriteLine(i);
             Console.WriteLine();
+
             string[] str = { "d", "r", "a", "D", "c" };
             Array.Sort(str);
 

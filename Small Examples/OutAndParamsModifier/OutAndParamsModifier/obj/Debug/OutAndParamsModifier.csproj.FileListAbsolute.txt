@@ -4,3 +4,9 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\OutAndParamsModifier\OutAn
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\OutAndParamsModifier\OutAndParamsModifier\obj\Debug\OutAndParamsModifier.csprojResolveAssemblyReference.cache
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\OutAndParamsModifier\OutAndParamsModifier\obj\Debug\OutAndParamsModifier.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\OutAndParamsModifier\OutAndParamsModifier\obj\Debug\OutAndParamsModifier.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\OutAndParamsModifier\OutAndParamsModifier\bin\Debug\OutAndParamsModifier.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\OutAndParamsModifier\OutAndParamsModifier\obj\Debug\OutAndParamsModifier.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\OutAndParamsModifier\OutAndParamsModifier\obj\Debug\OutAndParamsModifier.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\OutAndParamsModifier\OutAndParamsModifier\bin\Debug\OutAndParamsModifier.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\OutAndParamsModifier\OutAndParamsModifier\bin\Debug\OutAndParamsModifier.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\OutAndParamsModifier\OutAndParamsModifier\obj\Debug\OutAndParamsModifier.csprojResolveAssemblyReference.cache

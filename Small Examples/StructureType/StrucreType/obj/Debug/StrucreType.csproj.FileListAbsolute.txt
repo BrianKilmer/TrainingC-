@@ -4,3 +4,9 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StrucreType\StrucreType\bi
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StrucreType\StrucreType\bin\Debug\StrucreType.pdb
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StrucreType\StrucreType\obj\Debug\StrucreType.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StrucreType\StrucreType\obj\Debug\StrucreType.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\StructureType\StrucreType\bin\Debug\StrucreType.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\StructureType\StrucreType\obj\Debug\StrucreType.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\StructureType\StrucreType\obj\Debug\StrucreType.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\StructureType\StrucreType\bin\Debug\StrucreType.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\StructureType\StrucreType\bin\Debug\StrucreType.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\StructureType\StrucreType\obj\Debug\StrucreType.csprojResolveAssemblyReference.cache

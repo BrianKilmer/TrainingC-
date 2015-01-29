@@ -4,3 +4,6 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\PAssArrayParam\PAssArrayPa
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\PAssArrayParam\PAssArrayParam\obj\Debug\PAssArrayParam.csprojResolveAssemblyReference.cache
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\PAssArrayParam\PAssArrayParam\obj\Debug\PAssArrayParam.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\PAssArrayParam\PAssArrayParam\obj\Debug\PAssArrayParam.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\PAssArrayParam\PAssArrayParam\bin\Debug\PAssArrayParam.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\PAssArrayParam\PAssArrayParam\obj\Debug\PAssArrayParam.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\PAssArrayParam\PAssArrayParam\obj\Debug\PAssArrayParam.pdb

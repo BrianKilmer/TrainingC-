@@ -4,3 +4,6 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\MethodOverloading\MethodOv
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\MethodOverloading\MethodOverloading\obj\Debug\MethodOverloading.csprojResolveAssemblyReference.cache
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\MethodOverloading\MethodOverloading\obj\Debug\MethodOverloading.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\MethodOverloading\MethodOverloading\obj\Debug\MethodOverloading.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\MethodOverloading\MethodOverloading\bin\Debug\MethodOverloading.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\MethodOverloading\MethodOverloading\obj\Debug\MethodOverloading.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\MethodOverloading\MethodOverloading\obj\Debug\MethodOverloading.pdb

@@ -4,3 +4,6 @@ C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StaticNonStatic\StaticNonS
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StaticNonStatic\StaticNonStatic\obj\Debug\StaticNonStatic.csprojResolveAssemblyReference.cache
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StaticNonStatic\StaticNonStatic\obj\Debug\StaticNonStatic.exe
 C:\Users\BrianTerry\Desktop\TrainingC#\Small Examples\StaticNonStatic\StaticNonStatic\obj\Debug\StaticNonStatic.pdb
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\StaticNonStatic\StaticNonStatic\bin\Debug\StaticNonStatic.exe.config
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\StaticNonStatic\StaticNonStatic\obj\Debug\StaticNonStatic.exe
+C:\Users\BrianTerry\Desktop\Repos\TrainingC-\Small Examples\StaticNonStatic\StaticNonStatic\obj\Debug\StaticNonStatic.pdb

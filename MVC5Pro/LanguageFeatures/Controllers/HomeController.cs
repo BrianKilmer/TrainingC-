@@ -16,7 +16,6 @@ namespace LanguageFeatures.Controllers
             // this just returns a string, not a view.
             return "Navigate to a Home/<ActionMethod Name>";
         }
-
         public ViewResult AutoProperty()
         {
             // instantiate new 'Product' object
@@ -32,9 +31,8 @@ namespace LanguageFeatures.Controllers
             Product myProduct2 = new Product
             {
                 ProductID= 100, Description="A cool boat", Name="kayak", Category="WaterSports"
-
             };
-            return View("Result", (object)String.Format("Category: {0}", myProduct2.Category));
+            return View("Result", (object)String.Format("Category: {0} Name: {1} Desc. {2}", myProduct2.Category,myProduct2.Name,myProduct2.Description));
             
         }
 
@@ -64,6 +62,52 @@ namespace LanguageFeatures.Controllers
             };
             decimal cartTotal = cart.TotalPrices();
             return View("Result", (object)String.Format("Total Price {0:c}", cartTotal));
+        }
+
+        public ViewResult UseExtensionEnumerble()
+        {
+            IEnumerable<Product> products = new ShoppingCart
+            {
+                Products = new List<Product> {
+                    new Product {Name = "Tablet",Price= 275M},
+                    new Product {Name = "Ball",Price= 75M},
+                    new Product {Name = "Bike",Price= 125M},
+                    new Product {Name = "Shoes",Price= 100M},
+                }
+            };
+
+            Product[] productArray = 
+            {
+                new Product {Name = "Tablet",Price= 275M},
+                new Product {Name = "Ball",Price= 75M},
+                new Product {Name = "Bike",Price= 125M},
+                new Product {Name = "Shoes",Price= 100M},
+            };
+
+            decimal cartTotal = products.TotalPrices2();
+            decimal arrayTotal = products.TotalPrices2();
+
+            return View("Result", (object)String.Format("Total Price {0:c} Array Total {1:c}", cartTotal, arrayTotal));
+        }
+
+        public ViewResult UseFilterExtensionMEthod()
+        {
+            IEnumerable<Product> products = new ShoppingCart
+            {
+                Products = new List<Product> {
+                    new Product {Name = "Tablet",Price= 275M,Category="Computer"},
+                    new Product {Name = "Ball",Price= 75M,Category="Athletic"},
+                    new Product {Name = "Bike",Price= 125M,Category="Athletic"},
+                    new Product {Name = "Shoes",Price= 100M,Category="Athletic"},
+                }
+            };
+
+            decimal total = 0;
+            foreach (Product prod  in products.FilterByCategory("Athletic"))
+            {
+                total += prod.Price;
+            }
+            return View("Result", (object)String.Format("Total Price {0:c}", total));
         }
     }
 }
