@@ -1,676 +1,856 @@
-{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Courier New;}{\f1\fnil\fcharset0 Calibri;}}
-{\colortbl ;\red0\green0\blue255;}
-{\*\generator Riched20 6.3.9600}\viewkind4\uc1 
-\pard\tx959\tx1918\tx2877\tx3836\tx4795\tx5754\tx6713\tx7672\tx8631\f0\fs20 Data Types (CS-ASP_007)\par
-=======================\par
-Comments:  // Single line ... /* Multiline */\par
-\par
-string => alphanumeric (defaults to "")\par
-int => 2 billion to -2 billion (defaults to 0)\par
-double => fractional value (defaults to 0.0)\par
-bool => true or false (defaults to false)\par
-\par
-More: {{\field{\*\fldinst{HYPERLINK http://is.gd/data_types }}{\fldrslt{http://is.gd/data_types\ul0\cf0}}}}\f0\fs20\par
-\par
-\par
-Data Type Conversion (CS-ASP_008)\par
-=================================\par
-Implicit conversions - smaller type to larger type\par
-without data loss, "upcasting"\par
-\par
-Explicit conversions - require developer intervention,\par
-possibility of data loss, "downcasting", either in \par
-the form of cast or using a helper method.\par
-\par
-Casting numbers:\par
-int myInteger = (int)myDouble;\par
-\par
-Numbers to strings:\par
-string myString = myInteger.ToString();\par
-\par
-String to Numbers:\par
-int myInteger = int.Parse(myString);\par
-\par
-More: {{\field{\*\fldinst{HYPERLINK http://is.gd/datatype_conversion }}{\fldrslt{http://is.gd/datatype_conversion\ul0\cf0}}}}\f0\fs20\par
-\par
-\par
-Arithmetic Operators (CS-ASP_009)\par
-=================================\par
-= NOT equality, it's assignment\par
-\par
-Math Operators: + - * /\par
-\par
-Addition Assignment\par
-total = total + 5;\par
-total += 5;\par
-\par
-Increment Operator:  i++;\par
-Decrement Operator:  i--;\par
-\par
-Beware of order of precedence (use parenthesis)\par
-Beware of down casting (you'll lose precision)\par
-Beware of overflow (user bigger types)\par
-\par
-To make overflow throw an exception:\par
-\par
-checked \par
-\{\par
-  // some arithmetic operation\par
-  // that could potentially overflow\par
-\}\par
-\par
-C# Syntax (CS-ASP_010)\par
-======================\par
-Operands - variable names, object / server control \par
-names, literals - "Nouns" (you name these)\par
-\par
-Operators - "Verbs ... they act on the operands.\par
-\par
-{{\field{\*\fldinst{HYPERLINK http://is.gd/operators }}{\fldrslt{http://is.gd/operators\ul0\cf0}}}}\f0\fs20\par
-\par
-Expressions - One or more operands and zero or more \par
-operators that evaluate to a single value\par
-\par
-{{\field{\*\fldinst{HYPERLINK http://is.gd/expressions }}{\fldrslt{http://is.gd/expressions\ul0\cf0}}}}\f0\fs20\par
-\par
-Statements - A complete instruction - assignment of an \par
-expression to a variable, an increment/ decrement, etc.\par
-\par
-{{\field{\*\fldinst{HYPERLINK http://is.gd/statement }}{\fldrslt{http://is.gd/statement\ul0\cf0}}}}\f0\fs20\par
-\par
-Statements must end in a semi-colon  ;\par
-Whitespace is ignored (use for humans)\par
-\par
-\par
-Conditional if ... else if ... else Statement (CS-ASP_011)\par
-==========================================================\par
-= Assignment\par
-== Equality\par
-\par
-if (a == b)\par
-\{\par
-  // execute when the expression is true\par
-\}\par
-else\par
-\{\par
-  // executes when the expression is false\par
-\}\par
-\par
-... or ... evaluate other mutually exclusively options:\par
-\par
-if (a == b) \{ // some code \}\par
-else if (a == c) \{ // some code \}\par
-else if (a == d) \{ // some code \}\par
-else \{ // catch all \}\par
-\par
-CheckBox Server Control = Checked prop is bool\par
-\par
-RadioButton Server Control = GroupName prop groups \par
-them together, check prop is bool\par
-\par
-\par
-Conditional Ternary Operator (CS-ASP_012)\par
-=========================================\par
-Shortcut for evaluating an expression and\par
-returning a result.\par
-result = (a == b) ? "Equal" : "Not Equal";\par
-\par
-Comparison and Logical Operator (CS-ASP_013)\par
-============================================\par
-Comparison Operators\par
-used for conditional statements\par
-==\par
-!= \par
-< >\par
-<= >=\par
-!someBooleanValue - means NOT is true\par
-\par
-Logical Operators\par
-used to combine multiple expressions / evaluation\par
-\par
-&& - AND\par
-|| - OR\par
-\par
-Combine with parenthesis ( ) for order of precendence\par
-\par
-\par
-Working with Dates and Times (CS-ASP_014)\par
-=========================================\par
-\par
-Creating new DateTime objects\par
-DateTime myDateTime = DateTime.Now;\par
-DateTime myDateTime = DateTime("12/7/1969");\par
-\par
-Formatting ... many options:\par
-myDateTime.To_____()\par
-\par
-Retrieving Parts:\par
-myDateTime.Year // int\par
-myDateTime.Hour // int\par
-myDateTime.DayOfWeek // "Monday"\par
-myDateTime.DayOfYear // int 175\par
-\par
-DateTime Math:\par
-myDateTime.AddHours(3)\par
-myDateTime.AddMinutes(-5)\par
-\par
-"Chaining" = using multiple helper methods\par
-together with the dot . operator\par
-myDateTime.AddHours(3).AddMinutes(-5).ToString()\par
-\par
-\par
-Working with Spans of Time (CS-ASP_015)\par
-=======================================\par
-Create and initialize new TimeSpans\par
-\par
-// Days.Hours:Minutes:Seconds.Milliseconds\par
-TimeSpan myTimeSpan = TimeSpan.Parse("1.2:3:30.5");\par
-\par
-DateTime myBirthday = DateTime.Parse("12/7/1969");\par
-TimeSpan myAge = DateTime.Now.Subtract(myBirthday);\par
-\par
-More info at {{\field{\*\fldinst{HYPERLINK http://is.gd/timespan }}{\fldrslt{http://is.gd/timespan\ul0\cf0}}}}\f0\fs20\par
-\par
-Get individual parts\par
-myAge.Hours\par
-myAge.Seconds\par
-\par
-... or get TOTAL elapsed time\par
-as a double representing both\par
-the number of days / hours / etc.\par
-AND fractional values representing\par
-"left overs".\par
-\par
-myTimeSpan.TotalDays // double\par
-myTimeSpan.TotalHours // double\par
-\par
-\par
-Formatting Strings (CS-ASP_019)\par
-===============================\par
-Concenate Strings\par
-+ +=\par
-\par
-Format Strings\par
-String.Format("Hello \{0\}.  You are from \{1\}", "Bob", "Chicago")\par
-\par
-Format Numbers\par
-String.Format("Reference Code: \{0:000_000-0\}", 1234567)\par
-123_456-7\par
-\par
-Formatting Dates\par
-{{\field{\*\fldinst{HYPERLINK http://is.gd/formattingdates }}{\fldrslt{http://is.gd/formattingdates\ul0\cf0}}}}\f0\fs20\par
-String.Format("REference Date: \{0:ddd - d, MM, yyyy\}", someDate)\par
-Tue - 5, 07, 2014\par
-\par
-Formatting Currency\par
-{{\field{\*\fldinst{HYPERLINK http://is.gd/formattingcurrency }}{\fldrslt{http://is.gd/formattingcurrency\ul0\cf0}}}}\f0\fs20\par
-String.Format("Total: \{0:C\}", totalAmount);\par
-$50,000.00\par
-\par
-\par
-Single Dimensional Arrays (CS-ASP_021)\par
-======================================\par
-Indexes vs. Elements\par
-Accessor vs. Stored Values\par
-Indexes are zero based\par
-\par
-Declaring Arrays\par
-string[] myArray = new string[3];\par
-\par
-Declaring and Initializing Arrays\par
-string[] myArray = new string[3] \{ "Moe", "Larry", "Curly" \};\par
-\par
-Setting / Getting Values\par
-string myString = myArray[1]; // Retrieve the second element\par
-myArray[0] = myString; // Sets first element\par
-\par
-Multi-Dimensional Arrays (CS-ASP_022)\par
-=====================================\par
-Same as single dimensional ... just requires\par
-more indexes (in dimensions) to get to the element\par
-\par
-double[,] myArray = new double[2,3]; // contains 6 elements\par
-int[,,] rubicsCube = new int[3,3,3] // contains 27 elements\par
-\par
-rubicsCube[0,1,2] = 42;\par
-myInteger = rubicsCube[0,1,2];\par
-\par
-\par
-Changing the Length of an Array (CS-ASP_023)\par
-==============================================\par
-Arrays are immutable = cannot be changed in memory\par
-HOWEVER .NET Framework providers helper methods to\par
-resize an array ... creates a new array and copies\par
-the old values into it.\par
-\par
-Array.Resize(ref myArray, myArray.Length + 1);\par
-\par
-// Get the highest index:\par
-int highestIndex = myArray.GetUpperBound(0);\par
-// 0 = dimension we want to retrieve the \par
-// upper boundary for\par
-\par
-// Arrays have other helper methods \par
-myArray.Sum()\par
-myArray.Min()\par
-myArray.Max()\par
-myArray.Average()\par
-\par
-Array.Sort(myArray)\par
-Array.Reverse(myArray)\par
-\par
-\par
-Looping with the for Iteration Statement (CS-ASP_026)\par
-=====================================================\par
-\par
-Snippet:  for [tab] [tab]\par
-Then you can tab through the replaceable bits, hit enter to \par
-start writing code in the code block body.\par
-\par
-for (int i = 0; i < 10; i++)\par
-\{\par
-  // Your code here\par
-\}\par
-\par
-i - Any variable name\par
-\par
-1st part - counter declaration, can be initialized to any number\par
-2nd part - condition, can be any expression that equates to a bool\par
-3rd part - increment i++ / decrement i--, can step more than 1 using +=,\par
-\par
-string[] names = new string[] \{ "Wolverine", "Cyclops", "Professor X", "Phoenix" \};\par
-\par
-for (int i = 0; i < names.Length; i++)\par
-\{\par
-  // Cna search for a specific value\par
-  if (names[i] == "Professor X")\par
-  \{\par
-     // Do something here\par
-     // Can break out of additional iterations if you need to\par
-     break;\par
-  \}\par
-\}\par
-\par
-\par
-Looping with the while and do ... while Iteration Statements (CS-ASP_027)\par
-=========================================================================\par
-\par
-Random randon = new Random();\par
-// random.Next(lowerBounds, upperBounds)\par
-random.Next(1, 100); // returns a value between 1 and 100\par
-\par
-// If someExpression is already false, this will never execute\par
-while(someExpression) \{\par
-  // Code that would affect whether\par
-  // someExpression is true or false\par
-\}\par
-\par
-// If someExpression is already false, this will run AT LEAST ONCE\par
-do \{\par
-  // Code that would affect whether\par
-  // someExpression is true or false\par
-\} while (someExpression)\par
-\par
-\par
-\par
-Creating Overloaded MEthods (CS-ASP_031)\par
-========================================\par
-Different METHOD SIGNATURE, but same basic function.\par
-METHOD SIGNATURE ... the number and type of parameters\par
-Can have different return types.\par
-\par
-Creating Optional Parameters (CS-ASP_032)\par
-=========================================\par
-Optional parameters provide default values when you define\par
-the method.  So, if you don't supply a value, the default\par
-will be used.\par
-\par
-private void myMethod(string myRequiredParam,\par
-                     int myOptionalParam = 1,\par
-                     int myOtherOptionalParam = 5);\par
-\par
-// Can be called ...\par
-\par
-myMethod("Hello Required Param!");\par
-\par
-// or ...\par
-\par
-myMethod("Hello Required Param!", 100);\par
-\par
-// or ... \par
-\par
-myMethod("Hello Required Param!", 100, 500);\par
-\par
-// You cannot skip an optional parameter:\par
-\par
-myMethod("Hello Required Param!", , 500); // ERROR\par
-\par
-\par
-Passing Named Arguments Into Input Parameters (CS-ASP_033)\par
-=========================================================\par
-Allow us to send in parameter arugments OUT OF ORDER!\par
-We just previx the input parameter argument with the name\par
-of the parameter we're passing in, a colon, then the value:\par
-\par
-myMethod(myOtherOptionalParam: 500,\par
-         myRequiredParam: "Hello Required PAram",\par
-         myOptionalParam: 100);\par
-\par
-// You still have to pass in REQUIRED parameters.\par
-\par
-\par
-Creating Methods with Output Parameters (CS-ASP_034)\par
-=====================================================\par
-Allows you to return a value the normal way AND\par
-return a value via a method parameter:\par
-\par
-private bool myMethod(string myRequiredParam,\par
-                      out int myOptionalParam) \{ \}\par
-\par
-\par
-int myValue = 0;\par
-if (myMethod("Some required text", out myValue)) return "Hello World!";\par
-\par
-\par
-Manipulating Strings (CS-ASP_035)\par
-=================================\par
-\par
-// Escape double quotes\par
-string myString = "This is a double quote: \\".";\par
-\par
-// Accessing a specific char:\par
-myString[2]\par
-\par
-// StartsWith(), EndsWith(), Contains()\par
-// Check to see if a given string has a set of \par
-// characters beginning, end or somewhere inside.\par
-// Return true / false\par
-\par
-// IndexOf()\par
-// Find the index for one string inside of \par
-// another string.\par
-int myIndex = myString.IndexOf("howdy");\par
-\par
-// Insert(), Remove()\par
-// Insert adds characters starting at a given index\par
-// Remove removes characters starting at a given\par
-// index, and all the way through the length you \par
-// input.\par
-\par
-// Substring()\par
-// Retrieve characters beginning at a given index\par
-// all thr way through the length you input.\par
-\par
-// Trim(), TrimStart(), TrimEnd()\par
-// Remove space characters both, or just the start\par
-// or the end of the string.\par
-\par
-// PadLeft(), PadRight()\par
-// Allow you to specify a length for a string\par
-// and a character to pad the string with if its\par
-// length is less than the specified length.\par
-myString = someValue.PadLeft(10, '#');\par
-// Notice that we're inputting a char, not a string\par
-// therefore we have to use a single quote ' not\par
-// a double quote.\par
-\par
-// ToUpper(), ToLower()\par
-// Important!  Compare two strings regardless of\par
-// the case, beacuse in C#, two strings with\par
-// different cases are NOT equal.\par
-\par
-\par
-// Replace()\par
-// Replace every occurance of one string with\par
-// some other string.\par
-myString.Replace("$$$", myValue);\par
-\par
-// Split()\par
-// Take a string and split it into many strings\par
-// and store them in a string array.\par
-string[] names = myString.Split(';');\par
-\par
-// Concatenating strings, immutability\par
-// StringBuilder - memory efficient way of concatenating strings.\par
-\par
-\par
-Introduction to Classes and Objects (CS-ASP_036)\par
-================================================\par
-Class is a code block that defines a data type.\par
-An Object is an instance of a Class.\par
-Metaphors:\par
-Blueprint vs. Houses\par
-Recipe vs. Cupcakes\par
-Pattern vs. Bluejeans\par
-Cookie cutter vs. Cookes\par
-\par
-Classes have members, like Properties and Methods.\par
-\par
-Properties define the attributes that are set on\par
-an instance of the class / represent the "state" \par
-of the object.  You can set (assign) and get\par
-(retrieve) properties values on an object.\par
-\par
-Methods define actions an instance of a class\par
-can perform, usually on the object instance itself.\par
-\par
-You can create an instance of a class using the \par
-new keyword.  Think: "factory".\par
-\par
-You can access the members of an object by using\par
-the member access operator, the dot (.)\par
-\par
-Conceptually, classes are dleegated a responsibility\par
-in the system or represent some domain concept\par
-in the system.\par
-\par
-Classes are ultimately custom data types, more complex\par
-than the simple data types we've worked with.\par
-Therefore you can use them anywhere you use other\par
-data types (like as input parameters opr return\par
-values from a method.)\par
-\par
-class Car \{\par
-\par
-\}\par
-\par
-Auto Implemented Properties - simple properties\par
-prop [tab] [tab] [enter] [enter]\par
-\par
-this keyword - Access a member ofthe current instance\par
-of the class.\par
-\par
-public void MyMethod() \par
-\{\par
-  this.Year = 1976;\par
-\}\par
-\par
-\par
-\par
-\par
-Creating Class Files, Creating Cohesive Classes and Code Navigation (CS-ASP_037)\par
-================================================================================\par
-Prefer more classes w/ narrowly defined responsibilities\par
-Prefer to put each class in its own file\par
-Prefer high cohesion - similarity / signleness of purpose of the class members\par
-To achieve high cohesion, a rule of thumb: try to make your classes fit on \par
-one "screen" of your IDE (no scrolling required)\par
-\par
-\par
-Understanding Object References and Object Lifetime (CS-ASP_038)\par
-================================================================\par
-An object reference variable holds a reference to an instantied object \par
-in the computer's memory.\par
-\par
-MyClass myObject;\par
-\par
-The new keyword creates an instanceof the class and returns the addres of \par
-object in memory to the reference variable.\par
-\par
-myObject = new MyClass();\par
-\par
-More than one object reference variable can hold an address to the object in memory.\par
-\par
-MyClass myOtherObjectReference = myObject;\par
-\par
-Each time a new reference is added, the reference count increases by one.  Each time\par
-an object reference variable goes out of scope or is set to null, the reference\par
-count decreases by one.\par
-\par
-If the reference count is zero, the .NET Framework Runtime's Garbage Collector\par
-removes the objet from memory at an indeterminate point in time in the future. You\par
-can take control of the finalization process and even handle events just before the\par
-object is removed.  See: "deterministic finalization".\par
-\par
-\par
-Understanding the .NET Framework and Compilation (CS-ASP_039)\par
-=============================================================\par
-The .NET Framework consists of:\par
-\par
-- Runtime (Common Language Runtime, CLR) "protective bubble", manages memory,\par
-protects the user's machine, etc.\par
-\par
-- .NET Framework Class Library (FCL, Base Class Library, BCL) - thousands\par
-of classes built by Microsoft for every imaginable purpose.\par
-\par
-- Compilers (C# compiler, VB compiler) - turns your human readable source code into\par
-Microsoft Intermediate Language (MSIL, IL) and packaged into a .NET assembly\par
-(.exe - executable, or .dll - class library)\par
-\par
-- Many other tools and features\par
-\par
-Initial compilation to Intermediate Language, then a second compilation \par
-JIT - Just In Time compilation - an optimized version of the assembly for the\par
-specific hardware and software. Happens at first request on that computer.\par
-\par
-\par
-Undersatnding Namespaces and the unsing Directive (CS-ASP_040)\par
-===============================================================\par
-Namespaces disambiguate class names inside of class libraries or applications.\par
-\par
-You must rreference class names by their full name:\par
-\par
-System.Text.Stringbuilder sb = new System.Text.StringBuilder();\par
-\par
-... or, you can employ a using directive at the top of the code file to\par
-instruct the compiler to look in those namespaces to find the class\par
- that is referenced.\par
-\par
-using System.Text;\par
-. . . \par
-StringBuilder sb = new StringBuilder();\par
-\par
-You must always do this if the code you're writing is outside of \par
-the namespace of the class you want to use, even if it's in the same\par
-project.\par
-\par
-Default namespace defined in Project Properties (right-clicking on \par
-Poject name in Solution Explorer, select Properties ...)\par
-\par
-Creating Class Libraries and Adding Reference to Assemblies (CS-ASP_041)\par
-========================================================================\par
-Class Library project - creates a .dll that can be referenced in other projects.\par
-\par
-Add a Reference - the FCL is split into tiny pieces, and you must reference\par
-the assemblies that contain the parts of the library you want to use.\par
-\par
-Right-click project's References node in Solution Explorer, select Add Reference\par
-\par
-\par
-\par
-Accessibility Modifiers, Fields and Properties (CS-ASP_042)\par
-============================================================\par
-{{\field{\*\fldinst{HYPERLINK http://v.gd/access }}{\fldrslt{http://v.gd/access\ul0\cf0}}}}\f0\fs20\par
-\par
-Public - Class or member can be accessed by any code\par
-Private - Class or member can only be accessed by parent class\par
-Protected - Class or member can only be accessed by parent class or derived class\par
-Internal - Class or member can only be accessed by code inside the same assembly\par
-\par
-Classes are internal by default\par
-Methods and properties are private by default\par
-\par
-Encapsulation - hiding implementation behind npublic interfaces, reduces coupling\par
-increases plug-ability / resuability, maintainability, etc.\par
-\par
-private fields have two purposes:\par
-(1) reference to object or variable that used for internal implementation of class\par
-(2) hold the state of an object, backing field for public property\par
-\par
-propfull [tab] [tab]\par
-\par
-private int myField;\par
-public int MyProperty\par
-\{\par
-  get \{ return myField; \}\par
-  set \{ \par
-     if (value > 100)\par
-       myField = value;\par
-     else\par
-       // tell the caller that they can't do this\par
-  \}\par
-\}\par
-\par
-Full property definition and private fields to control\par
-access to private fields / state of the object.\par
-\par
-\par
-propg [tab] [tab]\par
-\par
-public int MyProperty \{ get; private set; \}\par
-\par
-Restricts setting of property to just the class' internal implementation\par
-\par
-\par
-Creating Constructor Methods (CS-ASP_043)\par
-=========================================\par
-Constructors are called at the moment of instantiation.\par
-Used to put the new instance of the class into a valid state.\par
-public class Foo\par
-\{\par
-  public Foo() \par
-  \{\par
-   ...\par
-  \}\par
-\}\par
-Whether you define it or not, there's a default constructor.\par
-You can override the default (no input parameters) or \par
-overload the constructor to allow the user to set the new \par
-instance to a valid state.\par
-\par
-\par
-Naming Conventions for Identifiers (CS-ASP_044)\par
-===============================================\par
-PascalCase - public\par
-camelCase - private, protected\par
-\par
-Public classes, methods and properties - PascalCase\par
-Private helper methods, input parameters - camelCase\par
-Locally scoped variables - camelCase\par
-Private field - camelCase prefixed w/ underscore: _firstName\par
-\par
-Choose long, memorable, understandable names\par
-that convey meaning / intent.\par
-\par
-\par
-\par
-Static versus Instance Members (CS-ASP_045)\par
-===========================================\par
-Static members - no instance of the class required to call method\par
-\par
-Instance member - must create an instance w/ new keyword to call\par
-methods and properties\par
-\par
-Can mix both in the same class, but can't reference instance\par
-members from inside of static members.\par
-\par
-Classes can be decaoted w/ static keyword ... all members\par
-must be static, can't create a new instance of that class,\par
-\par
-System.Math\par
-\par
-{{\field{\*\fldinst{HYPERLINK http://v.gd/static }}{\fldrslt{http://v.gd/static\ul0\cf0}}}}\f0\fs20\par
+{\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31505\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f37\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}{\f38\fbidi \fswiss\fcharset0\fprq2{\*\panose 020b0604030504040204}Tahoma;}{\flomajor\f31500\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\fdbmajor\f31501\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\fhimajor\f31502\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria;}
+{\fbimajor\f31503\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\flominor\f31504\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\fdbminor\f31505\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\fhiminor\f31506\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}
+{\fbiminor\f31507\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f39\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\f40\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\f42\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\f43\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\f44\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\f45\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\f46\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\f47\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\f39\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\f40\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\f42\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\f43\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\f44\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\f45\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\f46\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\f47\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\f409\fbidi \fswiss\fcharset238\fprq2 Calibri CE;}{\f410\fbidi \fswiss\fcharset204\fprq2 Calibri Cyr;}
+{\f412\fbidi \fswiss\fcharset161\fprq2 Calibri Greek;}{\f413\fbidi \fswiss\fcharset162\fprq2 Calibri Tur;}{\f416\fbidi \fswiss\fcharset186\fprq2 Calibri Baltic;}{\f417\fbidi \fswiss\fcharset163\fprq2 Calibri (Vietnamese);}
+{\f419\fbidi \fswiss\fcharset238\fprq2 Tahoma CE;}{\f420\fbidi \fswiss\fcharset204\fprq2 Tahoma Cyr;}{\f422\fbidi \fswiss\fcharset161\fprq2 Tahoma Greek;}{\f423\fbidi \fswiss\fcharset162\fprq2 Tahoma Tur;}
+{\f424\fbidi \fswiss\fcharset177\fprq2 Tahoma (Hebrew);}{\f425\fbidi \fswiss\fcharset178\fprq2 Tahoma (Arabic);}{\f426\fbidi \fswiss\fcharset186\fprq2 Tahoma Baltic;}{\f427\fbidi \fswiss\fcharset163\fprq2 Tahoma (Vietnamese);}
+{\f428\fbidi \fswiss\fcharset222\fprq2 Tahoma (Thai);}{\flomajor\f31508\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\flomajor\f31509\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\flomajor\f31511\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\flomajor\f31512\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\flomajor\f31513\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}
+{\flomajor\f31514\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\flomajor\f31515\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\flomajor\f31516\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}
+{\fdbmajor\f31518\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\fdbmajor\f31519\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fdbmajor\f31521\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}
+{\fdbmajor\f31522\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\fdbmajor\f31523\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fdbmajor\f31524\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\fdbmajor\f31525\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\fdbmajor\f31526\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fhimajor\f31528\fbidi \froman\fcharset238\fprq2 Cambria CE;}
+{\fhimajor\f31529\fbidi \froman\fcharset204\fprq2 Cambria Cyr;}{\fhimajor\f31531\fbidi \froman\fcharset161\fprq2 Cambria Greek;}{\fhimajor\f31532\fbidi \froman\fcharset162\fprq2 Cambria Tur;}
+{\fhimajor\f31535\fbidi \froman\fcharset186\fprq2 Cambria Baltic;}{\fhimajor\f31536\fbidi \froman\fcharset163\fprq2 Cambria (Vietnamese);}{\fbimajor\f31538\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}
+{\fbimajor\f31539\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fbimajor\f31541\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\fbimajor\f31542\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}
+{\fbimajor\f31543\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fbimajor\f31544\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\fbimajor\f31545\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\fbimajor\f31546\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\flominor\f31548\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\flominor\f31549\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\flominor\f31551\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\flominor\f31552\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\flominor\f31553\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}
+{\flominor\f31554\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\flominor\f31555\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\flominor\f31556\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}
+{\fdbminor\f31558\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\fdbminor\f31559\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fdbminor\f31561\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}
+{\fdbminor\f31562\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\fdbminor\f31563\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fdbminor\f31564\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\fdbminor\f31565\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\fdbminor\f31566\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fhiminor\f31568\fbidi \fswiss\fcharset238\fprq2 Calibri CE;}
+{\fhiminor\f31569\fbidi \fswiss\fcharset204\fprq2 Calibri Cyr;}{\fhiminor\f31571\fbidi \fswiss\fcharset161\fprq2 Calibri Greek;}{\fhiminor\f31572\fbidi \fswiss\fcharset162\fprq2 Calibri Tur;}
+{\fhiminor\f31575\fbidi \fswiss\fcharset186\fprq2 Calibri Baltic;}{\fhiminor\f31576\fbidi \fswiss\fcharset163\fprq2 Calibri (Vietnamese);}{\fbiminor\f31578\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}
+{\fbiminor\f31579\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fbiminor\f31581\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\fbiminor\f31582\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}
+{\fbiminor\f31583\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fbiminor\f31584\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\fbiminor\f31585\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\fbiminor\f31586\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;
+\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\*\defchp 
+\fs22\loch\af31506\hich\af31506\dbch\af31505 }{\*\defpap \ql \li0\ri0\sa200\sl276\slmult1\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 }\noqfpromote {\stylesheet{\ql \li0\ri0\sa200\sl276\slmult1
+\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af31507\afs22\alang1025 \ltrch\fcs0 \fs22\lang1033\langfe1033\loch\f31506\hich\af31506\dbch\af31505\cgrid\langnp1033\langfenp1033 \snext0 \sqformat \spriority0 Normal;}
+{\*\cs10 \additive \ssemihidden \sunhideused \spriority1 Default Paragraph Font;}{\*
+\ts11\tsrowd\trftsWidthB3\trpaddl108\trpaddr108\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\trcbpat1\trcfpat1\tblind0\tblindtype3\tsvertalt\tsbrdrt\tsbrdrl\tsbrdrb\tsbrdrr\tsbrdrdgl\tsbrdrdgr\tsbrdrh\tsbrdrv \ql \li0\ri0\sa200\sl276\slmult1
+\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af31507\afs22\alang1025 \ltrch\fcs0 \fs22\lang1033\langfe1033\loch\f31506\hich\af31506\dbch\af31505\cgrid\langnp1033\langfenp1033 \snext11 \ssemihidden \sunhideused 
+Normal Table;}{\s15\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af31507\afs22\alang1025 \ltrch\fcs0 \fs22\lang1033\langfe1033\loch\f31506\hich\af31506\dbch\af31505\cgrid\langnp1033\langfenp1033 
+\snext15 \sqformat \spriority1 \styrsid5713792 No Spacing;}{\s16\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af38\afs16\alang1025 \ltrch\fcs0 
+\fs16\lang1033\langfe1033\loch\f38\hich\af38\dbch\af31505\cgrid\langnp1033\langfenp1033 \sbasedon0 \snext16 \slink17 \ssemihidden \sunhideused \styrsid5713792 Balloon Text;}{\*\cs17 \additive \rtlch\fcs1 \af38\afs16 \ltrch\fcs0 \f38\fs16 
+\sbasedon10 \slink16 \slocked \ssemihidden \styrsid5713792 Balloon Text Char;}}{\*\rsidtbl \rsid5713792\rsid8265256}{\mmathPr\mmathFont34\mbrkBin0\mbrkBinSub0\msmallFrac0\mdispDef1\mlMargin0\mrMargin0\mdefJc1\mwrapIndent1440\mintLim0\mnaryLim1}{\info
+{\operator Brian Kilmer}{\creatim\yr2015\mo1\dy29\hr16\min28}{\revtim\yr2015\mo1\dy29\hr16\min29}{\printim\yr2015\mo1\dy29\hr16\min29}{\version2}{\edmins0}{\nofpages13}{\nofwords2821}{\nofchars16086}{\nofcharsws18870}{\vern49273}}{\*\xmlnstbl {\xmlns1 htt
+p://schemas.microsoft.com/office/word/2003/wordml}}\paperw12240\paperh15840\margl720\margr720\margt720\margb720\gutter0\ltrsect 
+\widowctrl\ftnbj\aenddoc\trackmoves0\trackformatting1\donotembedsysfont0\relyonvml0\donotembedlingdata1\grfdocevents0\validatexml0\showplaceholdtext0\ignoremixedcontent0\saveinvalidxml0\showxmlerrors0\horzdoc\dghspace120\dgvspace120\dghorigin1701
+\dgvorigin1984\dghshow0\dgvshow3\jcompress\viewkind1\viewscale100\rsidroot5713792 \nouicompat \fet0{\*\wgrffmtfilter 2450}\nofeaturethrottle1\ilfomacatclnup0\ltrpar \sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {\*\pnseclvl1
+\pnucrm\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang {\pntxta )}}{\*\pnseclvl5
+\pndec\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang 
+{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}\pard\plain \ltrpar\s15\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid5713792 \rtlch\fcs1 
+\af31507\afs22\alang1025 \ltrch\fcs0 \fs22\lang1033\langfe1033\loch\af31506\hich\af31506\dbch\af31505\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 Data Types (CS-ASP_007)
+\par \hich\af31506\dbch\af31505\loch\f31506 =======================
+\par \hich\af31506\dbch\af31505\loch\f31506 Comments:  // Single line ... /* Multiline */
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 string => alphanumeric (defaults to "")
+\par \hich\af31506\dbch\af31505\loch\f31506 int => 2 billion to -2 billion (defaults to 0)
+\par \hich\af31506\dbch\af31505\loch\f31506 double => fractional value (defaults to 0.0)
+\par \hich\af31506\dbch\af31505\loch\f31506 bool => true or false (defaults to false)
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 More: }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 HYPERLINK http://is.gd/data_types }{\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid5713792 
+{\*\datafield 00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b4800000068007400740070003a002f002f00690073002e00670064002f0064006100740061005f00740079007000650073000000795881f43b1d7f48af2c825dc485276300000000a5ab0000}}
+}{\fldrslt {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 http://is.gd/data_types}}}\sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 
 
-\pard\sa200\sl276\slmult1\f1\fs22\lang9\par
-}
- 
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Data Type Conversion (CS-ASP_008)
+\par \hich\af31506\dbch\af31505\loch\f31506 =================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Implicit conversions - smaller type to larger type
+\par \hich\af31506\dbch\af31505\loch\f31506 without data loss, "upcasting"
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Explicit conversions - require developer intervention,
+\par \hich\af31506\dbch\af31505\loch\f31506 possibility of data loss, "downcasting", either in 
+\par \hich\af31506\dbch\af31505\loch\f31506 the form of cast or using a helper method.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Casting numbers:
+\par \hich\af31506\dbch\af31505\loch\f31506 int myInteger = (int)myDouble;
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Numbers to strings:
+\par \hich\af31506\dbch\af31505\loch\f31506 stri\hich\af31506\dbch\af31505\loch\f31506 ng myString = myInteger.ToString();
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 String to Numbers:
+\par \hich\af31506\dbch\af31505\loch\f31506 int myInteger = int.Parse(myString);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 More: }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 HYPERLINK http://is.gd/datatype_conversion }{\rtlch\fcs1 \af31507 \ltrch\fcs0 
+\insrsid5713792 {\*\datafield 
+00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b5a00000068007400740070003a002f002f00690073002e00670064002f00640061007400610074007900700065005f0063006f006e00760065007200730069006f006e000000795881f43b1d7f48af2c825dc4852763
+00000000a5ab0000}}}{\fldrslt {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 http://is.gd/datatype_conversion}}}\sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {\rtlch\fcs1 \af31507 
+\ltrch\fcs0 \insrsid8265256 
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Arithmetic Operators (CS-ASP_009)
+\par \hich\af31506\dbch\af31505\loch\f31506 =================================
+\par \hich\af31506\dbch\af31505\loch\f31506 = NOT equality, it's assignment
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Math Operators: + - * /
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Addition Assignment
+\par \hich\af31506\dbch\af31505\loch\f31506 total = total + 5;
+\par \hich\af31506\dbch\af31505\loch\f31506 total += 5;
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Increment Operator:  i++;
+\par \hich\af31506\dbch\af31505\loch\f31506 Decrement Operator:  i--;
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Beware of order of precedence (use parenthesis)
+\par \hich\af31506\dbch\af31505\loch\f31506 Beware of down casting (you'll lose precision\hich\af31506\dbch\af31505\loch\f31506 )
+\par \hich\af31506\dbch\af31505\loch\f31506 Beware of overflow (user bigger types)
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 To make overflow throw an exception:
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 checked 
+\par \{
+\par \hich\af31506\dbch\af31505\loch\f31506   // some arithmetic operation
+\par \hich\af31506\dbch\af31505\loch\f31506   // that could potentially overflow
+\par \}
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 C# Syntax (CS-ASP_010)
+\par \hich\af31506\dbch\af31505\loch\f31506 ======================
+\par \hich\af31506\dbch\af31505\loch\f31506 Operands - variable names, object / server control 
+\par \hich\af31506\dbch\af31505\loch\f31506 names, literals - "Nouns" (you name these)
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Operators - "Verbs ... they act on the operands.
+\par 
+\par }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 HYPERLINK http://is.gd/operators }{\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid5713792 {\*\datafield 
+00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b4600000068007400740070003a002f002f00690073002e00670064002f006f00700065007200610074006f00720073000000795881f43b1d7f48af2c825dc485276300000000a5ab0000}}}{\fldrslt {
+\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 http://is.gd/operators}}}\sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Expressions - One or more operands and zero or mor\hich\af31506\dbch\af31505\loch\f31506 e 
+\par \hich\af31506\dbch\af31505\loch\f31506 operators that evaluate to a single value
+\par 
+\par }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 HYPERLINK http://is.gd/expressions }{\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid5713792 {\*\datafield 
+00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b4a00000068007400740070003a002f002f00690073002e00670064002f00650078007000720065007300730069006f006e0073000000795881f43b1d7f48af2c825dc485276300000000a5ab0000}}}{\fldrslt {
+\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 http://is.gd/expressions}}}\sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Statements - A complete instruction - assignment of an 
+\par \hich\af31506\dbch\af31505\loch\f31506 expression to a variable, an increment/ decrement, etc.
+\par 
+\par }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 HYPERLINK http://is.gd/statement }{\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid5713792 {\*\datafield 
+00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b4600000068007400740070003a002f002f00690073002e00670064002f00730074006100740065006d0065006e0074000000795881f43b1d7f48af2c825dc485276300000000a5ab0000}}}{\fldrslt {
+\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 http://is.gd/statement}}}\sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Statements must end in a semi-colon  ;
+\par \hich\af31506\dbch\af31505\loch\f31506 Whitespace is ignored (use for humans)
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Conditional if ... else if ... else Statement (CS-ASP_011)
+\par \hich\af31506\dbch\af31505\loch\f31506 ==========================================================
+\par \hich\af31506\dbch\af31505\loch\f31506 = Assignment
+\par \hich\af31506\dbch\af31505\loch\f31506 == Equality
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 if (a == b)
+\par \{
+\par \hich\af31506\dbch\af31505\loch\f31506   // execute when the expression is true
+\par \}
+\par \hich\af31506\dbch\af31505\loch\f31506 else
+\par \{
+\par \hich\af31506\dbch\af31505\loch\f31506   // executes when the expression is false
+\par \}
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 ... or ... evaluate other mutually exclusively options:
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 if (a == b) \{ // some code \}
+\par \hich\af31506\dbch\af31505\loch\f31506 else if (a == c) \{ // some code \}
+\par \hich\af31506\dbch\af31505\loch\f31506 else if (a == d) \{ // some\hich\af31506\dbch\af31505\loch\f31506  code \}
+\par \hich\af31506\dbch\af31505\loch\f31506 else \{ // catch all \}
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 CheckBox Server Control = Checked prop is bool
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 RadioButton Server Control = GroupName prop groups 
+\par \hich\af31506\dbch\af31505\loch\f31506 them together, check prop is bool
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Conditional Ternary Operator (CS-ASP_012)
+\par \hich\af31506\dbch\af31505\loch\f31506 =========================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Shortcut for evaluating an expression and
+\par \hich\af31506\dbch\af31505\loch\f31506 returning a result.
+\par \hich\af31506\dbch\af31505\loch\f31506 result = (a == b) ? "Equal" : "Not Equal";
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Comparison and Logical Operator (CS-ASP_013)
+\par \hich\af31506\dbch\af31505\loch\f31506 ============================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Comparison Operators
+\par \hich\af31506\dbch\af31505\loch\f31506 used for conditional statements
+\par \hich\af31506\dbch\af31505\loch\f31506 ==
+\par \hich\af31506\dbch\af31505\loch\f31506 != 
+\par \hich\af31506\dbch\af31505\loch\f31506 < >
+\par \hich\af31506\dbch\af31505\loch\f31506 <= >=
+\par \hich\af31506\dbch\af31505\loch\f31506 !someBooleanValue - means NOT is true
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Logical Operators
+\par \hich\af31506\dbch\af31505\loch\f31506 used to combine multiple expressions / evaluation
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 && - AND
+\par \hich\af31506\dbch\af31505\loch\f31506 || - OR
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Combine with parenthesis ( ) for order of precendence
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Working with Dates and Times (CS-ASP_014)
+\par \hich\af31506\dbch\af31505\loch\f31506 =========================================
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Creating new DateTime objects
+\par \hich\af31506\dbch\af31505\loch\f31506 DateTime myDateTime = DateTime.Now;
+\par \hich\af31506\dbch\af31505\loch\f31506 DateTime myDateTime = DateTime("12/7/1969");
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Formatting ... many options:
+\par \hich\af31506\dbch\af31505\loch\f31506 myDateTime.To_____()
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Retrieving Parts:
+\par \hich\af31506\dbch\af31505\loch\f31506 myDateTime.Year // int
+\par \hich\af31506\dbch\af31505\loch\f31506 myDateTim\hich\af31506\dbch\af31505\loch\f31506 e.Hour // int
+\par \hich\af31506\dbch\af31505\loch\f31506 myDateTime.DayOfWeek // "Monday"
+\par \hich\af31506\dbch\af31505\loch\f31506 myDateTime.DayOfYear // int 175
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 DateTime Math:
+\par \hich\af31506\dbch\af31505\loch\f31506 myDateTime.AddHours(3)
+\par \hich\af31506\dbch\af31505\loch\f31506 myDateTime.AddMinutes(-5)
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 "Chaining" = using multiple helper methods
+\par \hich\af31506\dbch\af31505\loch\f31506 together with the dot . operator
+\par \hich\af31506\dbch\af31505\loch\f31506 myDateTime.AddHours(3).AddMinutes(-\hich\af31506\dbch\af31505\loch\f31506 5).ToString()
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Working with Spans of Time (CS-ASP_015)
+\par \hich\af31506\dbch\af31505\loch\f31506 =======================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Create and initialize new TimeSpans
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Days.Hours:Minutes:Seconds.Milliseconds
+\par \hich\af31506\dbch\af31505\loch\f31506 TimeSpan myTimeSpan = TimeSpan.Parse("1.2:3:30.5");
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 DateTime myBirthday = DateTime.Parse("12/7/1969");
+\par \hich\af31506\dbch\af31505\loch\f31506 TimeSpan myAge = DateTime.Now.Subtract(myBirthday);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 More info at }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 HYPERLINK http://is.gd/timespan }{\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid5713792 
+{\*\datafield 00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b4400000068007400740070003a002f002f00690073002e00670064002f00740069006d0065007300700061006e000000795881f43b1d7f48af2c825dc485276300000000a5ab0000}}}{\fldrslt {
+\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 http://is.gd/timespan}}}\sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Get individual parts
+\par \hich\af31506\dbch\af31505\loch\f31506 myAge.Hours
+\par \hich\af31506\dbch\af31505\loch\f31506 myAge.Seconds
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 ... or get TOTAL elapsed time
+\par \hich\af31506\dbch\af31505\loch\f31506 as \hich\af31506\dbch\af31505\loch\f31506 a double representing both
+\par \hich\af31506\dbch\af31505\loch\f31506 the number of days / hours / etc.
+\par \hich\af31506\dbch\af31505\loch\f31506 AND fractional values representing
+\par \hich\af31506\dbch\af31505\loch\f31506 "left overs".
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 myTimeSpan.TotalDays // double
+\par \hich\af31506\dbch\af31505\loch\f31506 myTimeSpan.TotalHours // double
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Formatting Strings (CS-ASP_019)
+\par \hich\af31506\dbch\af31505\loch\f31506 ===============================
+\par \hich\af31506\dbch\af31505\loch\f31506 Concenate Strings
+\par \hich\af31506\dbch\af31505\loch\f31506 + +=
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Format Strings
+\par \hich\af31506\dbch\af31505\loch\f31506 String.Format("Hello \{0\}.  You are from \{1\}", "Bob", "Chicago")
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Format Numbers
+\par \hich\af31506\dbch\af31505\loch\f31506 String.Format("Reference Code: \{0:000_000-0\}", 1234567)
+\par \hich\af31506\dbch\af31505\loch\f31506 123_456-7
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Formatting Dates
+\par }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 HYPERLINK http://is.gd/formattingdates }{\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid5713792 {\*\datafield 
+00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b5200000068007400740070003a002f002f00690073002e00670064002f0066006f0072006d0061007400740069006e006700640061007400650073000000795881f43b1d7f48af2c825dc485276300000000a5ab0000}
+}}{\fldrslt {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 http://is.gd/f\hich\af31506\dbch\af31505\loch\f31506 ormattingdates}}}\sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {
+\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 
+\par \hich\af31506\dbch\af31505\loch\f31506 String.Format("REference Date: \{0:ddd - d, MM, yyyy\}", someDate)
+\par \hich\af31506\dbch\af31505\loch\f31506 Tue - 5, 07, 2014
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Formatting Currency
+\par }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 HYPERLINK http://is.gd/formattingcurrency }{\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid5713792 {\*\datafield 
+00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b5800000068007400740070003a002f002f00690073002e00670064002f0066006f0072006d0061007400740069006e006700630075007200720065006e00630079000000795881f43b1d7f48af2c825dc48527630000
+0000a5ab0000}}}{\fldrslt {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 http://is.gd/formattingcurrency}}}\sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {\rtlch\fcs1 \af31507 
+\ltrch\fcs0 \insrsid8265256 
+\par \hich\af31506\dbch\af31505\loch\f31506 String.Format("Total: \{0:C\}", totalAmount);
+\par \hich\af31506\dbch\af31505\loch\f31506 $50,000.00
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Single Dimensional Arrays (CS-ASP_021)
+\par \hich\af31506\dbch\af31505\loch\f31506 ======================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Indexes vs. Elements
+\par \hich\af31506\dbch\af31505\loch\f31506 Accessor vs. Stored Values
+\par \hich\af31506\dbch\af31505\loch\f31506 Indexes are zero based
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Declaring Arrays
+\par \hich\af31506\dbch\af31505\loch\f31506 string[] myArray = new string[3];
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Declaring and Initializing Arrays
+\par \hich\af31506\dbch\af31505\loch\f31506 string[] myArray = new string[3] \{ "Moe", "Larry", "Curly" \};
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Setting / Getting Values
+\par \hich\af31506\dbch\af31505\loch\f31506 string myString = myArray[1]; // Retrieve the second element
+\par \hich\af31506\dbch\af31505\loch\f31506 myArray[0] = myString; // Sets first element
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Multi-Dimensional Arrays (CS-ASP_022)
+\par \hich\af31506\dbch\af31505\loch\f31506 =======================\hich\af31506\dbch\af31505\loch\f31506 ==============
+\par \hich\af31506\dbch\af31505\loch\f31506 Same as single dimensional ... just requires
+\par \hich\af31506\dbch\af31505\loch\f31506 more indexes (in dimensions) to get to the element
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 double[,] myArray = new double[2,3]; // contains 6 elements
+\par \hich\af31506\dbch\af31505\loch\f31506 int[,,] rubicsCube = new int[3,3,3] // contains 27 elements
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 rubicsCube[0,1,2] = 42;
+\par \hich\af31506\dbch\af31505\loch\f31506 myInteger = rubicsCube[0,1,2];
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Changing the Length of an Array (CS-ASP_023)
+\par \hich\af31506\dbch\af31505\loch\f31506 ==============================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Arrays are immutable = cannot be changed in memory
+\par \hich\af31506\dbch\af31505\loch\f31506 HOWEVER .NET Framework providers helper methods to
+\par \hich\af31506\dbch\af31505\loch\f31506 resize an array ... creates a new array and copies
+\par \hich\af31506\dbch\af31505\loch\f31506 the old values into it.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Array.Resize(ref myArray, myArray.Length + 1);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Get the highest index:
+\par \hich\af31506\dbch\af31505\loch\f31506 int highestIndex = myArray.GetUpperBound(0);
+\par \hich\af31506\dbch\af31505\loch\f31506 // 0 = dimension we want to retrieve the 
+\par \hich\af31506\dbch\af31505\loch\f31506 // upper boundary f\hich\af31506\dbch\af31505\loch\f31506 or
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Arrays have other helper methods 
+\par \hich\af31506\dbch\af31505\loch\f31506 myArray.Sum()
+\par \hich\af31506\dbch\af31505\loch\f31506 myArray.Min()
+\par \hich\af31506\dbch\af31505\loch\f31506 myArray.Max()
+\par \hich\af31506\dbch\af31505\loch\f31506 myArray.Average()
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Array.Sort(myArray)
+\par \hich\af31506\dbch\af31505\loch\f31506 Array.Reverse(myArray)
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Looping with the for Iteration Statement (CS-ASP_026)
+\par \hich\af31506\dbch\af31505\loch\f31506 =====================================================
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Snippet:  for [tab] [tab]
+\par \hich\af31506\dbch\af31505\loch\f31506 Then you can tab through the replaceable bits, hit enter to 
+\par \hich\af31506\dbch\af31505\loch\f31506 start writing code in the code block body.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 for (int i = 0; i < 10; i++)
+\par \{
+\par \hich\af31506\dbch\af31505\loch\f31506   // Your code here
+\par \}
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 i - Any variable name
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 1st part - counter declaration, can be initializ\hich\af31506\dbch\af31505\loch\f31506 ed to any number
+\par \hich\af31506\dbch\af31505\loch\f31506 2nd part - condition, can be any expression that equates to a bool
+\par \hich\af31506\dbch\af31505\loch\f31506 3rd part - increment i++ / decrement i--, can step more than 1 using +=,
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 string[] names = new string[] \{ "Wolverine", "Cyclops", "Professor X", "Phoenix" \};
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 for (int i = \hich\af31506\dbch\af31505\loch\f31506 0; i < names.Length; i++)
+\par \{
+\par \hich\af31506\dbch\af31505\loch\f31506   // Cna search for a specific value
+\par \hich\af31506\dbch\af31505\loch\f31506   if (names[i] == "Professor X")
+\par \hich\af31506\dbch\af31505\loch\f31506   \{
+\par \hich\af31506\dbch\af31505\loch\f31506      // Do something here
+\par \hich\af31506\dbch\af31505\loch\f31506      // Can break out of additional iterations if you need to
+\par \hich\af31506\dbch\af31505\loch\f31506      break;
+\par \hich\af31506\dbch\af31505\loch\f31506   \}
+\par \}
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Looping with the while and do ... while Iteration Statements (CS-ASP_027)
+\par \hich\af31506\dbch\af31505\loch\f31506 =========================================================================
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Random randon = new Random();
+\par \hich\af31506\dbch\af31505\loch\f31506 // random.Next(lowerBounds, upperBounds)
+\par \hich\af31506\dbch\af31505\loch\f31506 random.Next(1, 100); // returns a va\hich\af31506\dbch\af31505\loch\f31506 lue between 1 and 100
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // If someExpression is already false, this will never execute
+\par \hich\af31506\dbch\af31505\loch\f31506 while(someExpression) \{
+\par \hich\af31506\dbch\af31505\loch\f31506   // Code that would affect whether
+\par \hich\af31506\dbch\af31505\loch\f31506   // someExpression is true or false
+\par \}
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // If someExpression is already false, this will run AT LEAST ONCE
+\par \hich\af31506\dbch\af31505\loch\f31506 do \{
+\par \hich\af31506\dbch\af31505\loch\f31506   // Code that would affect whether
+\par \hich\af31506\dbch\af31505\loch\f31506   // someExpression is true or false
+\par \}\hich\af31506\dbch\af31505\loch\f31506  while (someExpression)
+\par 
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Creating Overloaded MEthods (CS-ASP_031)
+\par \hich\af31506\dbch\af31505\loch\f31506 ========================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Different METHOD SIGNATURE, but same basic function.
+\par \hich\af31506\dbch\af31505\loch\f31506 METHOD SIGNATURE ... the number and type of parameters
+\par \hich\af31506\dbch\af31505\loch\f31506 Can have different return types.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Creating Optional Parameters (CS-ASP_032)
+\par \hich\af31506\dbch\af31505\loch\f31506 =========================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Optional parameters provide default values when you define
+\par \hich\af31506\dbch\af31505\loch\f31506 the method.  So, if you \hich\af31506\dbch\af31505\loch\f31506 don't supply a value, the default
+\par \hich\af31506\dbch\af31505\loch\f31506 will be used.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 private void myMethod(string myRequiredParam,
+\par \hich\af31506\dbch\af31505\loch\f31506                      int myOptionalParam = 1,
+\par \hich\af31506\dbch\af31505\loch\f31506                      int myOtherOptionalParam = 5);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Can be called ...
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 myMethod("Hello Required Param!");
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // o\hich\af31506\dbch\af31505\loch\f31506 r ...
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 myMethod("Hello Required Param!", 100);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // or ... 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 myMethod("Hello Required Param!", 100, 500);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // You cannot skip an optional parameter:
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 myMethod("Hello Required Param!", , 500); // ERROR
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Passing Named Arguments Into Input Parameters (CS-ASP_033)
+\par \hich\af31506\dbch\af31505\loch\f31506 =========================================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Allow us to send in parameter arugments OUT OF ORDER!
+\par \hich\af31506\dbch\af31505\loch\f31506 We just previx the input parameter argument with the name
+\par \hich\af31506\dbch\af31505\loch\f31506 of the parameter we're pass\hich\af31506\dbch\af31505\loch\f31506 ing in, a colon, then the value:
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 myMethod(myOtherOptionalParam: 500,
+\par \hich\af31506\dbch\af31505\loch\f31506          myRequiredParam: "Hello Required PAram",
+\par \hich\af31506\dbch\af31505\loch\f31506          myOptionalParam: 100);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // You still have to pass in REQUIRED parameters.
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Creating Methods with Output Parameters (CS-ASP_034\hich\af31506\dbch\af31505\loch\f31506 )
+\par \hich\af31506\dbch\af31505\loch\f31506 =====================================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Allows you to return a value the normal way AND
+\par \hich\af31506\dbch\af31505\loch\f31506 return a value via a method parameter:
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 private bool myMethod(string myRequiredParam,
+\par \hich\af31506\dbch\af31505\loch\f31506                       out int myOptionalParam) \{ \}
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 int myValue = 0;
+\par \hich\af31506\dbch\af31505\loch\f31506 if (myMethod("Some required text", out myValue)) return "Hello World!";
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Manipulating Strings (CS-ASP_035)
+\par \hich\af31506\dbch\af31505\loch\f31506 =================================
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Escape double quotes
+\par \hich\af31506\dbch\af31505\loch\f31506 string myString = "This is a double quote: \\".";
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Accessing a specifi\hich\af31506\dbch\af31505\loch\f31506 c char:
+\par \hich\af31506\dbch\af31505\loch\f31506 myString[2]
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // StartsWith(), EndsWith(), Contains()
+\par \hich\af31506\dbch\af31505\loch\f31506 // Check to see if a given string has a set of 
+\par \hich\af31506\dbch\af31505\loch\f31506 // characters beginning, end or somewhere inside.
+\par \hich\af31506\dbch\af31505\loch\f31506 // Return true / false
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // IndexOf()
+\par \hich\af31506\dbch\af31505\loch\f31506 // Find the index for one string inside of 
+\par \hich\af31506\dbch\af31505\loch\f31506 // another strin\hich\af31506\dbch\af31505\loch\f31506 g.
+\par \hich\af31506\dbch\af31505\loch\f31506 int myIndex = myString.IndexOf("howdy");
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Insert(), Remove()
+\par \hich\af31506\dbch\af31505\loch\f31506 // Insert adds characters starting at a given index
+\par \hich\af31506\dbch\af31505\loch\f31506 // Remove removes characters starting at a given
+\par \hich\af31506\dbch\af31505\loch\f31506 // index, and all the way through the length you 
+\par \hich\af31506\dbch\af31505\loch\f31506 // input.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Substring()
+\par \hich\af31506\dbch\af31505\loch\f31506 // Retrieve characters beginning at a given index
+\par \hich\af31506\dbch\af31505\loch\f31506 // all thr way through the length you input.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Trim(), TrimStart(), TrimEnd()
+\par \hich\af31506\dbch\af31505\loch\f31506 // Remove space characters both, or just the start
+\par \hich\af31506\dbch\af31505\loch\f31506 // or the end of the string.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // PadLeft(), PadRight()
+\par \hich\af31506\dbch\af31505\loch\f31506 // Allow you to spec\hich\af31506\dbch\af31505\loch\f31506 ify a length for a string
+\par \hich\af31506\dbch\af31505\loch\f31506 // and a character to pad the string with if its
+\par \hich\af31506\dbch\af31505\loch\f31506 // length is less than the specified length.
+\par \hich\af31506\dbch\af31505\loch\f31506 myString = someValue.PadLeft(10, '#');
+\par \hich\af31506\dbch\af31505\loch\f31506 // Notice that we're inputting a char, not a string
+\par \hich\af31506\dbch\af31505\loch\f31506 // therefore we have to use a single quote ' \hich\af31506\dbch\af31505\loch\f31506 not
+\par \hich\af31506\dbch\af31505\loch\f31506 // a double quote.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // ToUpper(), ToLower()
+\par \hich\af31506\dbch\af31505\loch\f31506 // Important!  Compare two strings regardless of
+\par \hich\af31506\dbch\af31505\loch\f31506 // the case, beacuse in C#, two strings with
+\par \hich\af31506\dbch\af31505\loch\f31506 // different cases are NOT equal.
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Replace()
+\par \hich\af31506\dbch\af31505\loch\f31506 // Replace every occurance of one string with
+\par \hich\af31506\dbch\af31505\loch\f31506 // some other string.
+\par \hich\af31506\dbch\af31505\loch\f31506 myString.Replace("$$$", myValue);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Split()
+\par \hich\af31506\dbch\af31505\loch\f31506 // Take a string and split it into many strings
+\par \hich\af31506\dbch\af31505\loch\f31506 // and store them in a string array.
+\par \hich\af31506\dbch\af31505\loch\f31506 string[] names = myString.Split(';');
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 // Concatenating strings, immutability
+\par \hich\af31506\dbch\af31505\loch\f31506 // StringBuilder - memory\hich\af31506\dbch\af31505\loch\f31506  efficient way of concatenating strings.
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Introduction to Classes and Objects (CS-ASP_036)
+\par \hich\af31506\dbch\af31505\loch\f31506 ================================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Class is a code block that defines a data type.
+\par \hich\af31506\dbch\af31505\loch\f31506 An Object is an instance of a Class.
+\par \hich\af31506\dbch\af31505\loch\f31506 Metaphors:
+\par \hich\af31506\dbch\af31505\loch\f31506 Blueprint vs. House\hich\af31506\dbch\af31505\loch\f31506 s
+\par \hich\af31506\dbch\af31505\loch\f31506 Recipe vs. Cupcakes
+\par \hich\af31506\dbch\af31505\loch\f31506 Pattern vs. Bluejeans
+\par \hich\af31506\dbch\af31505\loch\f31506 Cookie cutter vs. Cookes
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Classes have members, like Properties and Methods.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Properties define the attributes that are set on
+\par \hich\af31506\dbch\af31505\loch\f31506 an instance of the class / represent the "state" 
+\par \hich\af31506\dbch\af31505\loch\f31506 of the object.  You can set (assign) and get
+\par \hich\af31506\dbch\af31505\loch\f31506 (retrieve) properties values on an object.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Methods define actions an instance of a class
+\par \hich\af31506\dbch\af31505\loch\f31506 can perform, usually on the object instance itself.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 You can create an instance of a class using the 
+\par \hich\af31506\dbch\af31505\loch\f31506 new keyword.  Think\hich\af31506\dbch\af31505\loch\f31506 : "factory".
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 You can access the members of an object by using
+\par \hich\af31506\dbch\af31505\loch\f31506 the member access operator, the dot (.)
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Conceptually, classes are dleegated a responsibility
+\par \hich\af31506\dbch\af31505\loch\f31506 in the system or represent some domain concept
+\par \hich\af31506\dbch\af31505\loch\f31506 in the system.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Classes are ultimately custom data t\hich\af31506\dbch\af31505\loch\f31506 ypes, more complex
+\par \hich\af31506\dbch\af31505\loch\f31506 than the simple data types we've worked with.
+\par \hich\af31506\dbch\af31505\loch\f31506 Therefore you can use them anywhere you use other
+\par \hich\af31506\dbch\af31505\loch\f31506 data types (like as input parameters opr return
+\par \hich\af31506\dbch\af31505\loch\f31506 values from a method.)
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 class Car \{
+\par 
+\par \}
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Auto Implemented Properties - simple properties
+\par \hich\af31506\dbch\af31505\loch\f31506 prop [tab] [tab] [enter] [enter]
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 this keyword - Access a member ofthe current instance
+\par \hich\af31506\dbch\af31505\loch\f31506 of the class.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 public void MyMethod() 
+\par \{
+\par \hich\af31506\dbch\af31505\loch\f31506   this.Year = 1976;
+\par \}
+\par 
+\par 
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Creating Class Files, Creating Cohesive Classes and Code Navigation (CS-ASP_037)
+\par \hich\af31506\dbch\af31505\loch\f31506 ====================\hich\af31506\dbch\af31505\loch\f31506 ============================================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Prefer more classes w/ narrowly defined responsibilities
+\par \hich\af31506\dbch\af31505\loch\f31506 Prefer to put each class in its own file
+\par \hich\af31506\dbch\af31505\loch\f31506 Prefer high cohesion - similarity / signleness of purpose of the class members
+\par \hich\af31506\dbch\af31505\loch\f31506 To achieve high co\hich\af31506\dbch\af31505\loch\f31506 hesion, a rule of thumb: try to make your classes fit on 
+\par \hich\af31506\dbch\af31505\loch\f31506 one "screen" of your IDE (no scrolling required)
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Understanding Object References and Object Lifetime (CS-ASP_038)
+\par \hich\af31506\dbch\af31505\loch\f31506 ================================================================
+\par \hich\af31506\dbch\af31505\loch\f31506 An object reference variable holds a reference to an instantied object 
+\par \hich\af31506\dbch\af31505\loch\f31506 in the computer's memory.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 MyClass myObject;
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 The new keyword creates an instanceof the class and returns the addres of 
+\par \hich\af31506\dbch\af31505\loch\f31506 object in memory to the reference variable.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 myObject = new MyC\hich\af31506\dbch\af31505\loch\f31506 lass();
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 More than one object reference variable can hold an address to the object in memory.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 MyClass myOtherObjectReference = myObject;
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Each time a new reference is added, the reference count increases by one.  Each time
+\par \hich\af31506\dbch\af31505\loch\f31506 an object reference variable goe\hich\af31506\dbch\af31505\loch\f31506 s out of scope or is set to null, the reference
+\par \hich\af31506\dbch\af31505\loch\f31506 count decreases by one.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 If the reference count is zero, the .NET Framework Runtime's Garbage Collector
+\par \hich\af31506\dbch\af31505\loch\f31506 removes the objet from memory at an indeterminate point in time in the future. You
+\par \hich\af31506\dbch\af31505\loch\f31506 can take control of t\hich\af31506\dbch\af31505\loch\f31506 he finalization process and even handle events just before the
+\par \hich\af31506\dbch\af31505\loch\f31506 object is removed.  See: "deterministic finalization".
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Understanding the .NET Framework and Compilation (CS-ASP_039)
+\par \hich\af31506\dbch\af31505\loch\f31506 =============================================================
+\par \hich\af31506\dbch\af31505\loch\f31506 The .NET Framework consists of:
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 - Runtime (Common Language Runtime, CLR) "protective bubble", manages memory,
+\par \hich\af31506\dbch\af31505\loch\f31506 protects the user's machine, etc.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 - .NET Framework Class Library (FCL, Base Class Library, BCL) - thousands
+\par \hich\af31506\dbch\af31505\loch\f31506 of classes built by Microsoft for ev\hich\af31506\dbch\af31505\loch\f31506 ery imaginable purpose.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 - Compilers (C# compiler, VB compiler) - turns your human readable source code into
+\par \hich\af31506\dbch\af31505\loch\f31506 Microsoft Intermediate Language (MSIL, IL) and packaged into a .NET assembly
+\par \hich\af31506\dbch\af31505\loch\f31506 (.exe - executable, or .dll - class library)
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 - Many other tools and f\hich\af31506\dbch\af31505\loch\f31506 eatures
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Initial compilation to Intermediate Language, then a second compilation 
+\par \hich\af31506\dbch\af31505\loch\f31506 JIT - Just In Time compilation - an optimized version of the assembly for the
+\par \hich\af31506\dbch\af31505\loch\f31506 specific hardware and software. Happens at first request on that computer.
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Undersatnding Names\hich\af31506\dbch\af31505\loch\f31506 paces and the unsing Directive (CS-ASP_040)
+\par \hich\af31506\dbch\af31505\loch\f31506 ===============================================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Namespaces disambiguate class names inside of class libraries or applications.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 You must rreference class names by their full name:
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 System.Text.Stringbuilder sb = new System.Text.StringBuilder();
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 ... or, you can employ a using directive at the top of the code file to
+\par \hich\af31506\dbch\af31505\loch\f31506 instruct the compiler to look in those namespaces to find the class
+\par \hich\af31506\dbch\af31505\loch\f31506  that is referenced.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 using System.Text;
+\par \hich\af31506\dbch\af31505\loch\f31506 . . . 
+\par \hich\af31506\dbch\af31505\loch\f31506 Str\hich\af31506\dbch\af31505\loch\f31506 ingBuilder sb = new StringBuilder();
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 You must always do this if the code you're writing is outside of 
+\par \hich\af31506\dbch\af31505\loch\f31506 the namespace of the class you want to use, even if it's in the same
+\par \hich\af31506\dbch\af31505\loch\f31506 project.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Default namespace defined in Project Properties (right-clicking on 
+\par \hich\af31506\dbch\af31505\loch\f31506 Pojec\hich\af31506\dbch\af31505\loch\f31506 t name in Solution Explorer, select Properties ...)
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Creating Class Libraries and Adding Reference to Assemblies (CS-ASP_041)
+\par \hich\af31506\dbch\af31505\loch\f31506 ========================================================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Class Library project - creates a .dll that can be refere\hich\af31506\dbch\af31505\loch\f31506 nced in other projects.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Add a Reference - the FCL is split into tiny pieces, and you must reference
+\par \hich\af31506\dbch\af31505\loch\f31506 the assemblies that contain the parts of the library you want to use.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Right-click project's References node in Solution Explorer, select Add Reference
+\par 
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Accessibility Modifiers, Fields and Properties (CS-ASP_042)
+\par \hich\af31506\dbch\af31505\loch\f31506 ============================================================
+\par }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 HYPERLINK http://v.gd/access }{\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid5713792 {\*\datafield 
+00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b3e00000068007400740070003a002f002f0076002e00670064002f006100630063006500730073000000795881f43b1d7f48af2c825dc485276300000000a5ab0000}}}{\fldrslt {\rtlch\fcs1 \af31507 
+\ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 http://v.gd/access}}}\sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Public - Class or member can be accessed by any code
+\par \hich\af31506\dbch\af31505\loch\f31506 Private - Class or member can \hich\af31506\dbch\af31505\loch\f31506 only be accessed by parent class
+\par \hich\af31506\dbch\af31505\loch\f31506 Protected - Class or member can only be accessed by parent class or derived class
+\par \hich\af31506\dbch\af31505\loch\f31506 Internal - Class or member can only be accessed by code inside the same assembly
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Classes are internal by default
+\par \hich\af31506\dbch\af31505\loch\f31506 Methods and properties are \hich\af31506\dbch\af31505\loch\f31506 private by default
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Encapsulation - hiding implementation behind npublic interfaces, reduces coupling
+\par \hich\af31506\dbch\af31505\loch\f31506 increases plug-ability / resuability, maintainability, etc.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 private fields have two purposes:
+\par \hich\af31506\dbch\af31505\loch\f31506 (1) reference to object or variable that used for internal \hich\af31506\dbch\af31505\loch\f31506 implementation of class
+\par \hich\af31506\dbch\af31505\loch\f31506 (2) hold the state of an object, backing field for public property
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 propfull [tab] [tab]
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 private int myField;
+\par \hich\af31506\dbch\af31505\loch\f31506 public int MyProperty
+\par \{
+\par \hich\af31506\dbch\af31505\loch\f31506   get \{ return myField; \}
+\par \hich\af31506\dbch\af31505\loch\f31506   set \{ 
+\par \hich\af31506\dbch\af31505\loch\f31506      if (value > 100)
+\par \hich\af31506\dbch\af31505\loch\f31506        myField = value;
+\par \hich\af31506\dbch\af31505\loch\f31506      else
+\par \hich\af31506\dbch\af31505\loch\f31506    \hich\af31506\dbch\af31505\loch\f31506     // tell the caller that they can't do this
+\par \hich\af31506\dbch\af31505\loch\f31506   \}
+\par \}
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Full property definition and private fields to control
+\par \hich\af31506\dbch\af31505\loch\f31506 access to private fields / state of the object.
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 propg [tab] [tab]
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 public int MyProperty \{ get; private set; \}
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Restricts setting of property to \hich\af31506\dbch\af31505\loch\f31506 just the class' internal implementation
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Creating Constructor Methods (CS-ASP_043)
+\par \hich\af31506\dbch\af31505\loch\f31506 =========================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Constructors are called at the moment of instantiation.
+\par \hich\af31506\dbch\af31505\loch\f31506 Used to put the new instance of the class into a valid state.
+\par \hich\af31506\dbch\af31505\loch\f31506 public class Foo
+\par \{
+\par \hich\af31506\dbch\af31505\loch\f31506   public Foo() 
+\par \hich\af31506\dbch\af31505\loch\f31506   \{
+\par \hich\af31506\dbch\af31505\loch\f31506    ...
+\par \hich\af31506\dbch\af31505\loch\f31506   \}
+\par \}
+\par \hich\af31506\dbch\af31505\loch\f31506 Whether you define it or not, there's a default constructor.
+\par \hich\af31506\dbch\af31505\loch\f31506 You can override the default (no input parameters) or 
+\par \hich\af31506\dbch\af31505\loch\f31506 overload the constructor to allow the user to set the new 
+\par \hich\af31506\dbch\af31505\loch\f31506 instance to a valid state.
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Naming Conventions for Identifiers (CS-ASP_044)
+\par \hich\af31506\dbch\af31505\loch\f31506 ===============================================
+\par \hich\af31506\dbch\af31505\loch\f31506 PascalCase - public
+\par \hich\af31506\dbch\af31505\loch\f31506 camelCase - private, protected
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Public classes, methods and properties - PascalCase
+\par \hich\af31506\dbch\af31505\loch\f31506 Private helper methods, input parameters - camelCase
+\par \hich\af31506\dbch\af31505\loch\f31506 Loc\hich\af31506\dbch\af31505\loch\f31506 ally scoped variables - camelCase
+\par \hich\af31506\dbch\af31505\loch\f31506 Private field - camelCase prefixed w/ underscore: _firstName
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Choose long, memorable, understandable names
+\par \hich\af31506\dbch\af31505\loch\f31506 that convey meaning / intent.
+\par 
+\par 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Static versus Instance Members (CS-ASP_045)
+\par \hich\af31506\dbch\af31505\loch\f31506 ===========================================
+\par \hich\af31506\dbch\af31505\loch\f31506 Static members - no instance of the class required to call method
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Instance member - must create an instance w/ new keyword to call
+\par \hich\af31506\dbch\af31505\loch\f31506 methods and properties
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Can mix both in the same class, but can't reference inst\hich\af31506\dbch\af31505\loch\f31506 ance
+\par \hich\af31506\dbch\af31505\loch\f31506 members from inside of static members.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Classes can be decaoted w/ static keyword ... all members
+\par \hich\af31506\dbch\af31505\loch\f31506 must be static, can't create a new instance of that class,
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 System.Math
+\par 
+\par }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 HYPERLINK http://v.gd/static }{\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid5713792 {\*\datafield 
+00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b3e00000068007400740070003a002f002f0076002e00670064002f007300740061007400690063000000795881f43b1d7f48af2c825dc485276300000000a5ab0000}}}{\fldrslt {\rtlch\fcs1 \af31507 
+\ltrch\fcs0 \insrsid8265256 \hich\af31506\dbch\af31505\loch\f31506 http://v.gd/static}}}\sectd \ltrsect\linex0\sectlinegrid299\sectdefaultcl\sectrsid5713792\sftnbj {\rtlch\fcs1 \af31507 \ltrch\fcs0 \insrsid8265256 
+\par }{\rtlch\fcs1 \af37 \ltrch\fcs0 \f37\lang9\langfe1033\langnp9\insrsid8265256 
+\par }{\*\themedata 504b030414000600080000002100e9de0fbfff0000001c020000130000005b436f6e74656e745f54797065735d2e786d6cac91cb4ec3301045f748fc83e52d4a
+9cb2400825e982c78ec7a27cc0c8992416c9d8b2a755fbf74cd25442a820166c2cd933f79e3be372bd1f07b5c3989ca74aaff2422b24eb1b475da5df374fd9ad
+5689811a183c61a50f98f4babebc2837878049899a52a57be670674cb23d8e90721f90a4d2fa3802cb35762680fd800ecd7551dc18eb899138e3c943d7e503b6
+b01d583deee5f99824e290b4ba3f364eac4a430883b3c092d4eca8f946c916422ecab927f52ea42b89a1cd59c254f919b0e85e6535d135a8de20f20b8c12c3b0
+0c895fcf6720192de6bf3b9e89ecdbd6596cbcdd8eb28e7c365ecc4ec1ff1460f53fe813d3cc7f5b7f020000ffff0300504b030414000600080000002100a5d6
+a7e7c0000000360100000b0000005f72656c732f2e72656c73848fcf6ac3300c87ef85bd83d17d51d2c31825762fa590432fa37d00e1287f68221bdb1bebdb4f
+c7060abb0884a4eff7a93dfeae8bf9e194e720169aaa06c3e2433fcb68e1763dbf7f82c985a4a725085b787086a37bdbb55fbc50d1a33ccd311ba548b6309512
+0f88d94fbc52ae4264d1c910d24a45db3462247fa791715fd71f989e19e0364cd3f51652d73760ae8fa8c9ffb3c330cc9e4fc17faf2ce545046e37944c69e462
+a1a82fe353bd90a865aad41ed0b5b8f9d6fd010000ffff0300504b0304140006000800000021006b799616830000008a0000001c0000007468656d652f746865
+6d652f7468656d654d616e616765722e786d6c0ccc4d0ac3201040e17da17790d93763bb284562b2cbaebbf600439c1a41c7a0d29fdbd7e5e38337cedf14d59b
+4b0d592c9c070d8a65cd2e88b7f07c2ca71ba8da481cc52c6ce1c715e6e97818c9b48d13df49c873517d23d59085adb5dd20d6b52bd521ef2cdd5eb9246a3d8b
+4757e8d3f729e245eb2b260a0238fd010000ffff0300504b03041400060008000000210030dd4329a8060000a41b0000160000007468656d652f7468656d652f
+7468656d65312e786d6cec594f6fdb3614bf0fd87720746f6327761a07758ad8b19b2d4d1bc46e871e698996d850a240d2497d1bdae38001c3ba618715d86d87
+615b8116d8a5fb34d93a6c1dd0afb0475292c5585e9236d88aad3e2412f9e3fbff1e1fa9abd7eec70c1d1221294fda5efd72cd4324f1794093b0eddd1ef62fad
+79482a9c0498f184b4bd2991deb58df7dfbb8ad755446282607d22d771db8b944ad79796a40fc3585ee62949606ecc458c15bc8a702910f808e8c66c69b9565b
+5d8a314d3c94e018c8de1a8fa94fd05093f43672e23d06af89927ac06762a049136785c10607758d9053d965021d62d6f6804fc08f86e4bef210c352c144dbab
+999fb7b4717509af678b985ab0b6b4ae6f7ed9ba6c4170b06c788a705430adf71bad2b5b057d03606a1ed7ebf5babd7a41cf00b0ef83a6569632cd467faddec9
+699640f6719e76b7d6ac355c7c89feca9cccad4ea7d36c65b258a206641f1b73f8b5da6a6373d9c11b90c537e7f08dce66b7bbeae00dc8e257e7f0fd2badd586
+8b37a088d1e4600ead1ddaef67d40bc898b3ed4af81ac0d76a197c86826828a24bb318f3442d8ab518dfe3a20f000d6458d104a9694ac6d88728eee2782428d6
+0cf03ac1a5193be4cbb921cd0b495fd054b5bd0f530c1931a3f7eaf9f7af9e3f45c70f9e1d3ff8e9f8e1c3e3073f5a42ceaa6d9c84e5552fbffdeccfc71fa33f
+9e7ef3f2d117d57859c6fffac327bffcfc793510d26726ce8b2f9ffcf6ecc98baf3efdfdbb4715f04d814765f890c644a29be408edf3181433567125272371be
+15c308d3f28acd249438c19a4b05fd9e8a1cf4cd296699771c393ac4b5e01d01e5a30a787d72cf1178108989a2159c77a2d801ee72ce3a5c545a6147f32a9979
+3849c26ae66252c6ed637c58c5bb8b13c7bfbd490a75330f4b47f16e441c31f7184e140e494214d273fc80900aedee52ead87597fa824b3e56e82e451d4c2b4d
+32a423279a668bb6690c7e9956e90cfe766cb37b077538abd27a8b1cba48c80acc2a841f12e698f13a9e281c57911ce298950d7e03aba84ac8c154f8655c4f2a
+f074481847bd804859b5e696007d4b4edfc150b12addbecba6b18b148a1e54d1bc81392f23b7f84137c2715a851dd0242a633f900710a218ed715505dfe56e86
+e877f0034e16bafb0e258ebb4faf06b769e888340b103d331115bebc4eb813bf83291b63624a0d1475a756c734f9bbc2cd28546ecbe1e20a3794ca175f3fae90
+fb6d2dd99bb07b55e5ccf68942bd0877b23c77b908e8db5f9db7f024d9239010f35bd4bbe2fcae387bfff9e2bc289f2fbe24cfaa301468dd8bd846dbb4ddf1c2
+ae7b4c191ba8292337a469bc25ec3d411f06f53a73e224c5292c8de0516732307070a1c0660d125c7d44553488700a4d7bddd3444299910e254ab984c3a219ae
+a4adf1d0f82b7bd46cea4388ad1c12ab5d1ed8e1153d9c9f350a3246aad01c6873462b9ac05999ad5cc988826eafc3acae853a33b7ba11cd1445875ba1b236b1
+399483c90bd560b0b0263435085a21b0f22a9cf9356b38ec6046026d77eba3dc2dc60b17e92219e180643ed27acffba86e9c94c7ca9c225a0f1b0cfae0788ad5
+4adc5a9aec1b703b8b93caec1a0bd8e5de7b132fe5113cf312503b998e2c2927274bd051db6b35979b1ef271daf6c6704e86c73805af4bdd476216c26593af84
+0dfb5393d964f9cc9bad5c313709ea70f561ed3ea7b053075221d51696910d0d339585004b34272bff7213cc7a510a5454a3b349b1b206c1f0af490176745d4b
+c663e2abb2b34b23da76f6352ba57ca2881844c1111ab189d8c7e07e1daaa04f40255c77988aa05fe06e4e5bdb4cb9c5394bbaf28d98c1d971ccd20867e556a7
+689ec9166e0a522183792b8907ba55ca6e943bbf2a26e52f48957218ffcf54d1fb09dc3eac04da033e5c0d0b8c74a6b43d2e54c4a10aa511f5fb021a07533b20
+5ae07e17a621a8e082dafc17e450ffb739676998b48643a4daa7211214f623150942f6a02c99e83b85583ddbbb2c4996113211551257a656ec1139246ca86be0
+aadedb3d1441a89b6a929501833b197fee7b9641a3503739e57c732a59b1f7da1cf8a73b1f9bcca0945b874d4393dbbf10b1680f66bbaa5d6f96e77b6f59113d
+316bb31a795600b3d256d0cad2fe354538e7566b2bd69cc6cbcd5c38f0e2bcc63058344429dc2121fd07f63f2a7c66bf76e80d75c8f7a1b622f878a18941d840
+545fb28d07d205d20e8ea071b283369834296bdaac75d256cb37eb0bee740bbe278cad253b8bbfcf69eca23973d939b97891c6ce2cecd8da8e2d343578f6648a
+c2d0383fc818c798cf64e52f597c740f1cbd05df0c264c49134cf09d4a60e8a107260f20f92d47b374e32f000000ffff0300504b030414000600080000002100
+0dd1909fb60000001b010000270000007468656d652f7468656d652f5f72656c732f7468656d654d616e616765722e786d6c2e72656c73848f4d0ac2301484f7
+8277086f6fd3ba109126dd88d0add40384e4350d363f2451eced0dae2c082e8761be9969bb979dc9136332de3168aa1a083ae995719ac16db8ec8e4052164e89
+d93b64b060828e6f37ed1567914b284d262452282e3198720e274a939cd08a54f980ae38a38f56e422a3a641c8bbd048f7757da0f19b017cc524bd62107bd500
+1996509affb3fd381a89672f1f165dfe514173d9850528a2c6cce0239baa4c04ca5bbabac4df000000ffff0300504b01022d0014000600080000002100e9de0f
+bfff0000001c0200001300000000000000000000000000000000005b436f6e74656e745f54797065735d2e786d6c504b01022d0014000600080000002100a5d6
+a7e7c0000000360100000b00000000000000000000000000300100005f72656c732f2e72656c73504b01022d00140006000800000021006b799616830000008a
+0000001c00000000000000000000000000190200007468656d652f7468656d652f7468656d654d616e616765722e786d6c504b01022d00140006000800000021
+0030dd4329a8060000a41b00001600000000000000000000000000d60200007468656d652f7468656d652f7468656d65312e786d6c504b01022d001400060008
+00000021000dd1909fb60000001b0100002700000000000000000000000000b20900007468656d652f7468656d652f5f72656c732f7468656d654d616e616765722e786d6c2e72656c73504b050600000000050005005d010000ad0a00000000}
+{\*\colorschememapping 3c3f786d6c2076657273696f6e3d22312e302220656e636f64696e673d225554462d3822207374616e64616c6f6e653d22796573223f3e0d0a3c613a636c724d
+617020786d6c6e733a613d22687474703a2f2f736368656d61732e6f70656e786d6c666f726d6174732e6f72672f64726177696e676d6c2f323030362f6d6169
+6e22206267313d226c743122207478313d22646b3122206267323d226c743222207478323d22646b322220616363656e74313d22616363656e74312220616363
+656e74323d22616363656e74322220616363656e74333d22616363656e74332220616363656e74343d22616363656e74342220616363656e74353d22616363656e74352220616363656e74363d22616363656e74362220686c696e6b3d22686c696e6b2220666f6c486c696e6b3d22666f6c486c696e6b222f3e}
+{\*\latentstyles\lsdstimax267\lsdlockeddef0\lsdsemihiddendef1\lsdunhideuseddef1\lsdqformatdef0\lsdprioritydef99{\lsdlockedexcept \lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority0 \lsdlocked0 Normal;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority9 \lsdlocked0 heading 1;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 2;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 3;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 4;
+\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 5;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 6;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 7;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 8;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 9;
+\lsdpriority39 \lsdlocked0 toc 1;\lsdpriority39 \lsdlocked0 toc 2;\lsdpriority39 \lsdlocked0 toc 3;\lsdpriority39 \lsdlocked0 toc 4;\lsdpriority39 \lsdlocked0 toc 5;\lsdpriority39 \lsdlocked0 toc 6;\lsdpriority39 \lsdlocked0 toc 7;
+\lsdpriority39 \lsdlocked0 toc 8;\lsdpriority39 \lsdlocked0 toc 9;\lsdqformat1 \lsdpriority35 \lsdlocked0 caption;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority10 \lsdlocked0 Title;\lsdpriority1 \lsdlocked0 Default Paragraph Font;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority11 \lsdlocked0 Subtitle;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority22 \lsdlocked0 Strong;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority20 \lsdlocked0 Emphasis;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority59 \lsdlocked0 Table Grid;\lsdunhideused0 \lsdlocked0 Placeholder Text;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority1 \lsdlocked0 No Spacing;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 1;\lsdunhideused0 \lsdlocked0 Revision;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority34 \lsdlocked0 List Paragraph;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority29 \lsdlocked0 Quote;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority30 \lsdlocked0 Intense Quote;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority19 \lsdlocked0 Subtle Emphasis;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority21 \lsdlocked0 Intense Emphasis;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority31 \lsdlocked0 Subtle Reference;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority32 \lsdlocked0 Intense Reference;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority33 \lsdlocked0 Book Title;\lsdpriority37 \lsdlocked0 Bibliography;\lsdqformat1 \lsdpriority39 \lsdlocked0 TOC Heading;}}{\*\datastore 010500000200000018000000
+4d73786d6c322e534158584d4c5265616465722e362e3000000000000000000000060000
+d0cf11e0a1b11ae1000000000000000000000000000000003e000300feff090006000000000000000000000001000000010000000000000000100000feffffff00000000feffffff0000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffdfffffffeffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffff52006f006f007400200045006e00740072007900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000016000500ffffffffffffffffffffffff0c6ad98892f1d411a65f0040963251e500000000000000000000000070b4
+58771b3cd001feffffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000105000000000000}}
