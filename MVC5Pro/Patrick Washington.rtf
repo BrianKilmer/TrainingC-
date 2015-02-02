@@ -1,0 +1,178 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Consolas;}{\f2\fnil\fcharset0 Consolas;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red255\green255\blue255;\red43\green145\blue175;\red255\green255\blue0;\red128\green0\blue0;\red163\green21\blue21;\red0\green255\blue0;\red0\green128\blue0;\red255\green0\blue0;}
+{\*\generator Riched20 6.3.9600}\viewkind4\uc1 
+\pard\sl240\slmult1 {\f0\fs22\lang9{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=VAtVv1Q7ufM }}{\fldrslt{https://www.youtube.com/watch?v=VAtVv1Q7ufM\ul0\cf0}}}}\f0\fs22\par
+\cf2\f1\fs19 @model \highlight3 MyFirstProject.Models.\cf4 Student\par
+\par
+\cf0\ul\f2\lang1033 controller\ulnone :\cf4\f1\lang9\par
+\f2\lang1033\tab\f1\lang9 List\cf2 <\cf4 Student\cf2 > students = \cf1 new\cf2  \cf4 List\cf2 <\cf4 Student\cf2 >();\par
+\f2\lang1033\tab\f1\lang9 students.Add(alex);\par
+       students.Add(terry);\par
+       \cf1 return\cf2  View(students);\par
+\par
+\ul\f2\lang1033 View\ulnone :\f1\lang9\par
+
+\pard\li720\sl240\slmult1\f2\lang1033 // receives a list or collection of student objects\f1\lang9\par
+\highlight5 @model \cf4\highlight3 IEnumerable\cf2 <MyFirstProject.Models.\cf4 Student\cf2 >\par
+\par
+\highlight5 @\cf1\highlight3 foreach\cf2  (\cf1 var\cf2  item \cf1 in\cf2  Model)\par
+\{\par
+    \highlight5 @\highlight3 item.FirstName \highlight5 @\highlight3 item.LastName \cf1 <\cf6 br\cf2  \cf1 />\cf2\par
+\} \par
+\par
+
+\pard\sl240\slmult1\ul\f2\lang1033 Display data from multiple classes\ulnone :\par
+you can only pass 1 model to the view. - create a  3rd class that contains objects from both classes\par
+\par
+// usually referred to as "ViewModels" and are kept in ther own folders as "ViewModels"\par
+\cf1\f1 public\cf2  \cf1 class\cf2  \cf4 Course_Students\cf2\par
+    \{\par
+        \cf1 public\cf2  \cf4 Course\cf2  course \{ \cf1 get\cf2 ; \cf1 set\cf2 ; \}\f2\tab\tab // Course object\f1\par
+        \cf1 public\cf2  \cf4 List\cf2 <\cf4 Student\cf2 > students \{ \cf1 get\cf2 ; \cf1 set\cf2 ; \}\f2\tab // object of list of students\f1\par
+    \}\par
+\par
+\f2 // conroller\f1\par
+\cf4\f2     \f1 Course\cf2  \highlight5 math \highlight3 = \cf1 new\cf2  \cf4 Course\cf2 ();\par
+    math.CourseName = \cf7 "Math 101"\cf2 ;\par
+    math.TotalCredits = 4;\par
+            \par
+    \cf4 Student\cf2  alex = \cf1 new\cf2  \cf4 Student\cf2 ();\par
+    alex.StudentID = 1;\par
+    alex.FirstName = \cf7 "Alex"\cf2 ;\par
+    alex.LastName = \cf7 "Smith"\cf2 ;\par
+\par
+    \cf4 Student\cf2  terry = \cf1 new\cf2  \cf4 Student\cf2 ();\par
+    terry.StudentID = 2;\par
+    terry.FirstName = \cf7 "Terry"\cf2 ;\par
+    terry.LastName = \cf7 "Kilmer"\cf2 ;\par
+\par
+    \cf4 List\cf2 <\cf4 Student\cf2 > \highlight8 students \highlight3 = \cf1 new\cf2  \cf4 List\cf2 <\cf4 Student\cf2 >();\par
+    students.Add(alex);\par
+    students.Add(terry);\par
+\par
+    \cf4 Course_Students\cf2  obj = \cf1 new\cf2  \cf4 Course_Students\cf2 ();\par
+    obj.course = \highlight5 math\highlight3 ;\par
+    obj.students = \highlight8 students\highlight3 ;\par
+\par
+    \cf1 return\cf2  View(obj);\par
+\par
+\f2 //view\par
+\highlight5\f1 @model \highlight3 MyFirstProject.Models.\cf4 Course_Students\par
+\cf1 <\cf6 h2\cf1 >\cf2 Course Title \highlight5 @\highlight3 Model.course.CourseName\cf1 </\cf6 h2\cf1 >\par
+\cf2\highlight5 @\cf1\highlight3 foreach\cf2  (\cf1 var\cf2  item \cf1 in\cf2  Model.students)\par
+\{\par
+    \cf1 <\cf6 h4\cf1 >\cf2 Student \highlight5 @\highlight3 item.FirstName  \highlight5 @\highlight3 item.LastName  \cf1 </\cf6 h4\cf1 >\cf2\par
+\}\par
+\par
+\par
+\f2 by default in Views.Shared is where the application looks for layouts\par
+\par
+_ViewStart.cshtml\par
+\highlight5\f1 @\{\highlight3\par
+    Layout = \cf7 "~/Views/Shared/_Layout.cshtml"\cf2 ;\par
+\highlight5\}\par
+\highlight0\f2 View are then injected into this layout within the \highlight5\f1 @\highlight3 RenderBody()\f2  section of the layout\par
+\par
+Look and feel of the site can be controlled by style sheets, by convention located in the 'Content" folder\par
+Loaded via: App_Start>BundleConfig.cs\par
+\par
+The layout refers the the css and jquery to be used\par
+\highlight0     \par
+    \f1 @\cf4\highlight3 Styles\cf2 .Render(\cf7 "~/Content/css"\cf2 )\par
+    \highlight5 @\cf4\highlight3 Scripts\cf2 .Render(\cf7 "~/bundles/modernizr"\cf2 )\par
+\par
+\highlight0\f2     \f1 @\cf4\highlight3 Scripts\cf2 .Render(\cf7 "~/bundles/jquery"\cf2 )\par
+    \highlight5 @\cf4\highlight3 Scripts\cf2 .Render(\cf7 "~/bundles/bootstrap"\cf2 )\par
+    \highlight5 @\highlight3 RenderSection(\cf7 "scripts"\cf2 , required: \cf1 false\cf2 )\par
+\par
+\f2 54:00\par
+Action links\par
+\par
+// DisplayName, ActionMethod, ControllerName\par
+\highlight5\f1 @\highlight3 Html.ActionLink(\cf7 "Home"\cf2 , \cf7 "Index"\cf2 , \cf7 "Home"\cf2 )\par
+\par
+\f2 58:00  databases\par
+\par
+\ul Code First\ulnone\par
+1. Create class files that you want to make tables out of.\par
+2. Create a context class that extends dbContext and specify the names of the classes you want to create the table out of.\par
+3. Specify the DB location and name you'd like to use\par
+4. Initialize with seed data (new Class)\par
+5. Call the initializer in global.asax file application start method\par
+6. int he controller, create an instance of the context and use LINQ to connect to the DB and fetch the data\par
+7. Display data in the view\par
+\par
+2.\par
+\cf1    \f1 public\cf2  \cf1 class\cf2  \cf4\highlight5 SchoolContext\cf2  \highlight3 : \cf4 DbContext\cf2\par
+    \{\par
+        \cf9 // specify the class file you want to create the table from \cf2\par
+        \cf9 // enablles CRUD functionality\cf2\par
+        \cf1 public\cf2  \cf4 DbSet\cf2 <\cf4 Student\cf2 > Students \{ \cf1 get\cf2 ; \cf1 set\cf2 ; \}\par
+    \}\par
+\f2 3.\par
+\cf1\f1 <\cf7 add\cf1  \cf10 name\cf1 =\cf2 "\cf4\highlight5 SchoolContext\cf2  \highlight3 "\cf1  \cf10 connectionString\cf1 =\cf2 "\cf1 Data Source=(LocalDb)\\v11.0;AttachDbFilename=|DataDirectory|\\School.mdf;Initial Catalog=aspnet-MyFirstProject-20150131054723;Integrated Security=True\cf2 "\par
+\cf1       \cf10 providerName\cf1 =\cf2 "\cf1 System.Data.SqlClient\cf2 "\cf1  />\par
+\par
+\cf0\f2 4.\par
+\cf1\f1 public\cf2  \cf1 class\cf2  \cf4 SchoolInitializer\cf2  : \cf4 DropCreateDatabaseIfModelChanges\cf2 <\cf4 SchoolContext\cf2 >\par
+    \{\par
+        \cf9 // overidding the virtual 'Seed' method  in DropCreateDatabaseIfModelChanges\cf2\par
+        \cf1 protected\cf2  \cf1 override\cf2  \cf1 void\cf2  Seed(\cf4 SchoolContext\cf2  context)\par
+        \{\par
+            \cf1 var\cf2  students = \cf1 new\cf2  \cf4 List\cf2 <\cf4 Student\cf2 >\par
+            \{\par
+                \cf1 new\cf2  \cf4 Student\cf2\{FirstName = \cf7 "John"\cf2 , LastName = \cf7 "Smith"\cf2\},\par
+                \cf1 new\cf2  \cf4 Student\cf2\{FirstName = \cf7 "Jane"\cf2 , LastName = \cf7 "Dow"\cf2\},\par
+                \cf1 new\cf2  \cf4 Student\cf2\{FirstName = \cf7 "Brian"\cf2 , LastName = \cf7 "Kilmer"\cf2\},\par
+                \cf1 new\cf2  \cf4 Student\cf2\{FirstName = \cf7 "Terry"\cf2 , LastName = \cf7 "Kilmer"\cf2\}\par
+            \};\par
+\f2\tab      \cf1\f1 foreach\cf2  (\cf1 var\cf2  temp \cf1 in\cf2  students)\par
+            \{\par
+                context.Students.Add(temp);\par
+            \}\par
+            context.SaveChanges();\f2\tab\tab\tab\f1\par
+        \}\par
+    \}\par
+\par
+\f2 5. in global.asax file application start method\par
+\cf4\f1 Database\cf2 .SetInitializer<\cf4 SchoolContext\cf2 >(\cf1 new\cf2  \cf4 SchoolInitializer\cf2 ());\par
+\par
+\f2\par
+6. in the controller:\par
+\cf9\tab\f1 // create instance of the SchoolContext class\cf2\par
+        \cf1 private\cf2  \cf4 SchoolContext\cf2  db = \cf1 new\cf2  \cf4 SchoolContext\cf2 ();\par
+        \cf1 public\cf2  \cf4 ActionResult\cf2  Xyz()\par
+        \{\par
+            \cf9 // fetch everything from the Students class/table and put  it in a list\cf2\par
+            \cf1 var\cf2  students = db.Students.ToList();\par
+            \cf1 return\cf2  View(students);\par
+        \}\par
+\par
+\f2 7. in the view:\par
+\highlight5\f1 @model \cf4\highlight3 IEnumerable\cf2 <MyFirstProject.Models.\cf4 Student\cf2 >  \par
+\par
+\highlight5 @\cf1\highlight3 foreach\cf2  (\cf1 var\cf2  item \cf1 in\cf2  Model)\par
+\{\par
+    \cf1 <\cf6 h4\cf1 >\cf2 Student \highlight5 @\highlight3 item.FirstName  \highlight5 @\highlight3 item.LastName  \cf1 </\cf6 h4\cf1 >\cf2\par
+\}  \par
+\par
+\f2 the local db is in the App_Data folder (Show all files)\par
+r-click > include in project, then dbl click on the db to open\par
+\par
+\ul Database First\ulnone\f1\par
+\par
+\f2\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\highlight5\f1\par
+}
+ 

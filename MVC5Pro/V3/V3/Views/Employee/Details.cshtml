@@ -1,0 +1,28 @@
+﻿@model V3.Models.Employee
+
+@{
+    ViewBag.Title = "Employee Details";
+}
+
+<h2>Employee Details</h2>
+
+<table>
+    <tr>
+        <td>
+            Employee ID: 
+        </td>
+        <td>
+            @Model.id
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Name:
+        </td>
+        <td>
+            @Model.NameFirst  @Model.NameLast
+        </td>
+    </tr>
+</table>
+<a href="~/Employee?id=@Model.DepartmentID">Back to Employee list</a>
+

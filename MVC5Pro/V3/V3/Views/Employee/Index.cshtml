@@ -1,0 +1,22 @@
+﻿@model IEnumerable<V3.Models.Employee>
+@using V3.Models    
+@{
+    ViewBag.Title = "Employee List";
+}
+
+<h2>Employee List</h2>
+
+<div style="font-family:arial;">
+
+    <ul>
+        @foreach(Employee emp in @Model) {
+            <li>
+                @Html.ActionLink(emp.NameFirst, "Details", new  { id = emp.id }) <br />
+                @*<A href="Details/@emp.id">@emp.NameFirst @emp.NameLast</A>*@
+            </li>
+        }
+
+    </ul>
+</div>
+
+<a href="~/Department">Back to Department list</a>

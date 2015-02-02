@@ -1,0 +1,21 @@
+﻿@using V3.Models 
+@model IEnumerable<Department>
+ 
+@{
+    ViewBag.Title = "Departments";
+}
+
+<h2>Departments</h2>
+
+<div style="font-family:arial;">
+
+    <ul>
+        @foreach (Department dep in @Model)
+        {
+            <li>
+                @Html.ActionLink(dep.Name, "Index", "Employee", new  { id = dep.Id },null) 
+            </li>
+        }
+
+    </ul>
+</div>

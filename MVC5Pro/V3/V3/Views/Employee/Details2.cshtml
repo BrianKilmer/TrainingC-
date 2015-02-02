@@ -1,0 +1,28 @@
+﻿@model V3.Models.Employee
+
+@{
+    ViewBag.Title = "Details2";
+}
+
+<h2>Empoyee Details</h2>
+<table>
+    <tr>
+        <td>ID: </td>
+        <td>@Model.id</td>
+    </tr>
+    <tr>
+        <td>Name: </td>
+        <td> @Model.NameFirst  @Model.NameLast</td>
+    </tr>
+    <tr>
+        <td>Gender: </td>
+        <td> @Model.gender </td>
+    </tr>
+    <tr>
+        <td>City: </td>
+        <td> @Model.city </td>
+    </tr>
+</table>
+@Html.ActionLink("Back to Employee List", "Index", new { ID = @Model.DepartmentID }) <br>
+<a href="Index">Back to Employee List</a>
+
