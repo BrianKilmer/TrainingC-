@@ -1,4 +1,4 @@
-{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Consolas;}{\f2\fnil\fcharset0 Consolas;}{\f3\fnil\fprq8\fcharset0 Calibri;}}
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Consolas;}{\f2\fnil\fcharset0 Consolas;}{\f3\fnil\fprq8\fcharset0 Calibri;}{\f4\froman\fcharset0 Times New Roman;}}
 {\colortbl ;\red0\green0\blue255;\red255\green255\blue255;\red0\green0\blue0;\red0\green128\blue0;\red163\green21\blue21;\red255\green255\blue0;\red255\green0\blue0;\red43\green145\blue175;\red0\green255\blue0;\red128\green0\blue0;}
 {\*\generator Riched20 6.3.9600}\viewkind4\uc1 
 \pard\sl240\slmult1\f0\fs22\lang9 kudvenkat mvc\par
@@ -9329,7 +9329,7 @@ Always better to use stringly typed models over these 2\par
     \cf4 // null = no initilization stradegy\cf3\par
     \cf8 Database\cf3 .SetInitializer<V3.Models.\cf8 EmployeeContext\cf3 >(\cf1 null\cf3 );\f2\par
 \par
-PArt 9: \par
+\ul Part 9\ulnone : \par
 \par
 \cf1    \f1 public\cf3  \cf8 ActionResult\cf3  Index()\par
     \{\par
@@ -9351,7 +9351,196 @@ PArt 9: \par
 \cf3\f2\tab\f1\}\par
 \cf1\par
 \f2\tab\f1 <\cf10 a\cf3  \cf7 href\cf1 ="~/Employee">\cf3 Back to list\cf1 </\cf10 a\cf1 >\f2   //if you're on the detail page, you need ~/\cf3\f1\par
-        \f2\par
+        \par
+\par
+\ul\f2 Part 11\ulnone : Using business Objects\par
+Entities are mapped to db tables. Business objexcts contain both state(data) and behaviour that is logic-specific to the business. models have no strint rules and can live anywhere... even in a separate project.\par
+\par
+\cf1\f1 get\cf3\par
+    \{\par
+        \cf1 string\cf3  connectionString = \cf8 ConfigurationManager\cf3 .ConnectionStrings[\cf5 "EmployeeContext"\cf3 ].ConnectionString;\par
+\par
+        \cf8 List\cf3 <\cf8 Employee\cf3 > employees = \cf1 new\cf3  \cf8 List\cf3 <\cf8 Employee\cf3 >();\par
+\par
+        \cf1 using\cf3  (\cf8 SqlConnection\cf3  con = \cf1 new\cf3  \cf8 SqlConnection\cf3 (connectionString))\par
+        \{\par
+            \cf8 SqlCommand\cf3  cmd = \cf1 new\cf3  \cf8 SqlCommand\cf3 (\cf5 "spGetAllEmployees"\cf3 , con);\par
+            cmd.CommandType = \cf8 CommandType\cf3 .StoredProcedure;\par
+            con.Open();\par
+            \cf8 SqlDataReader\cf3  rdr = cmd.ExecuteReader();\par
+            \cf1 while\cf3  (rdr.Read())\par
+            \{\par
+                \cf8 Employee\cf3  employee = \cf1 new\cf3  \cf8 Employee\cf3 ();\par
+                employee.id = \cf8 Convert\cf3 .ToInt32(rdr[\cf5 "Id"\cf3 ]);\par
+                employee.DepartmentID = \cf8 Convert\cf3 .ToInt32(rdr[\cf5 "DepartmentID"\cf3 ]);\par
+                employee.age = \cf8 Convert\cf3 .ToInt32(rdr[\cf5 "age"\cf3 ]);\par
+                employee.NameFirst = rdr[\cf5 "NameFirst"\cf3 ].ToString();\par
+                employee.NameLast = rdr[\cf5 "NameLast"\cf3 ].ToString();\par
+                employee.gender = rdr[\cf5 "Gender"\cf3 ].ToString();\par
+                employee.city = rdr[\cf5 "City"\cf3 ].ToString();\par
+                \cf1 if\cf3  (!(rdr[\cf5 "DateOfBirth"\cf3 ] \cf1 is\cf3  \cf8 DBNull\cf3 )) \par
+                        \{\par
+                            employee.DateOfBirth = \cf8 Convert\cf3 .ToDateTime(rdr[\cf5 "DateOfBirth"\cf3 ]);\par
+                        \}\par
+\par
+                employees.Add(employee);\par
+            \}\par
+        \}\par
+\par
+        \cf1 return\cf3  employees;\par
+    \}\par
+\par
+\f2 Part 12 : Creating a View to inser data\par
+\par
+Create select list:\par
+\cf1    \f1 <\cf10 div\cf3  \cf7 class\cf1 ="form-group">\cf3\par
+        \highlight6 @\highlight2 Html.LabelFor(model => model.gender, htmlAttributes: \cf1 new\cf3  \{ @class = \cf5 "control-label col-md-2"\cf3  \})\par
+        \cf1 <\cf10 div\cf3  \cf7 class\cf1 ="col-md-10">\cf3\par
+            \highlight6 @\highlight2 Html.DropDownList(\cf5 "gender"\cf3 , \cf1 new\cf3  \cf8 List\cf3 <\cf8 SelectListItem\cf3 >\par
+                \{\par
+                    \cf1 new\cf3  \cf8 SelectListItem\cf3\{Text = \cf5 "Male"\cf3 , Value=\cf5 "Male"\cf3\},\par
+                    \cf1 new\cf3  \cf8 SelectListItem\cf3\{Text = \cf5 "Female"\cf3 , Value=\cf5 "Female"\cf3\}\par
+                \}, \cf5 "Select Gender"\cf3 )\par
+            \highlight6 @\highlight2 Html.ValidationMessageFor(model => model.gender, \cf5 ""\cf3 , \cf1 new\cf3  \{ @class = \cf5 "text-danger"\cf3  \})\par
+        \cf1 </\cf10 div\cf1 >\cf3\par
+    \cf1 </\cf10 div\cf1 >\par
+\par
+\par
+string\cf3  connectionString = \cf8 ConfigurationManager\cf3 .ConnectionStrings[\cf5 "EmployeeContext"\cf3 ].ConnectionString;\par
+\par
+    \cf1 using\cf3  (\cf8 SqlConnection\cf3  con = \cf1 new\cf3  \cf8 SqlConnection\cf3 (connectionString))\par
+    \{\par
+        \cf8 SqlCommand\cf3  cmd = \cf1 new\cf3  \cf8 SqlCommand\cf3 (\cf5 "spAddEmployee"\cf3 , con);\par
+        cmd.CommandType = \cf8 CommandType\cf3 .StoredProcedure;\par
+\par
+        \cf8 SqlParameter\cf3  paramNameF = \cf1 new\cf3  \cf8 SqlParameter\cf3 ();\par
+        paramNameF.ParameterName = \cf5 "@NameFirst"\cf3 ;\par
+        paramNameF.Value = employee.NameFirst;\par
+        cmd.Parameters.Add(paramNameF);\par
+\par
+        \cf8 SqlParameter\cf3  paramNameL = \cf1 new\cf3  \cf8 SqlParameter\cf3 ();\par
+        paramNameL.ParameterName = \cf5 "@NameLast"\cf3 ;\par
+        paramNameL.Value = employee.NameLast;\par
+        cmd.Parameters.Add(paramNameL);\par
+\par
+        \cf8 SqlParameter\cf3  paramGender = \cf1 new\cf3  \cf8 SqlParameter\cf3 ();\par
+        paramGender.ParameterName = \cf5 "@gender"\cf3 ;\par
+        paramGender.Value = employee.gender;\par
+        cmd.Parameters.Add(paramGender);\par
+\par
+        \cf8 SqlParameter\cf3  paramcity = \cf1 new\cf3  \cf8 SqlParameter\cf3 ();\par
+        paramcity.ParameterName = \cf5 "@city"\cf3 ;\par
+        paramcity.Value = employee.city;\par
+        cmd.Parameters.Add(paramcity);\par
+\par
+        \cf8 SqlParameter\cf3  paramage = \cf1 new\cf3  \cf8 SqlParameter\cf3 ();\par
+        paramage.ParameterName = \cf5 "@age"\cf3 ;\par
+        paramage.Value = employee.age;\par
+        cmd.Parameters.Add(paramage);\par
+\par
+        \cf8 SqlParameter\cf3  paramDeptID = \cf1 new\cf3  \cf8 SqlParameter\cf3 ();\par
+        paramDeptID.ParameterName = \cf5 "@DepartmentID"\cf3 ;\par
+        paramDeptID.Value = employee.DepartmentID;\par
+        cmd.Parameters.Add(paramDeptID);\par
+\par
+        \cf8 SqlParameter\cf3  paramDOB = \cf1 new\cf3  \cf8 SqlParameter\cf3 ();\par
+        paramDOB.ParameterName = \cf5 "@DateOfBirth"\cf3 ;\par
+        paramDOB.Value = employee.DateOfBirth;\par
+        cmd.Parameters.Add(paramDOB);\par
+\par
+        con.Open();\par
+        cmd.ExecuteNonQuery();\par
+    \}\par
+\par
+    [\cf8 HttpPost\cf3 ]\par
+    \cf1 public\cf3  \cf8 ActionResult\cf3  Create(\cf8 FormCollection\cf3  formCollection)\par
+    \{\par
+        \cf4 // an example to see whats in the form collection\cf3\par
+        \cf4 //foreach (string key in formCollection.AllKeys)\cf3\par
+        \cf4 //\{\cf3\par
+        \cf4 //    Response.Write("Key= " + key + " ");\cf3\par
+        \cf4 //    Response.Write(formCollection[key] + "<br>");\cf3\par
+        \cf4 //\}\cf3\par
+\par
+        \cf4 //code to insert into the employee table\cf3\par
+        BusinessLayer.\cf8 Employee\cf3  employee = \cf1 new\cf3  BusinessLayer.\cf8 Employee\cf3 ();\par
+        \cf4 // Retrieve form data using form collection\cf3\par
+        employee.NameFirst = formCollection[\cf5 "NameFirst"\cf3 ];\par
+        employee.NameLast = formCollection[\cf5 "NameLast"\cf3 ];\par
+        employee.gender = formCollection[\cf5 "gender"\cf3 ];\par
+        employee.city = formCollection[\cf5 "city"\cf3 ];\par
+        employee.age =  \cf8 Convert\cf3 .ToInt32(formCollection[\cf5 "age"\cf3 ]);\par
+        employee.DepartmentID = \cf8 Convert\cf3 .ToInt32(formCollection[\cf5 "DepartmentID"\cf3 ]);\par
+        employee.DateOfBirth = \cf8 Convert\cf3 .ToDateTime(formCollection[\cf5 "DateOfBirth"\cf3 ]);\par
+\par
+        \cf8 EmployeeBusinessLayer\cf3  employeeBusinessLayer = \cf1 new\cf3  \cf8 EmployeeBusinessLayer\cf3 ();\par
+        \cf4 // method AddEmployee in employeeBusinessLayer\cf3\par
+        employeeBusinessLayer.AddEmployee(employee);\par
+        \cf1 return\cf3  RedirectToAction(\cf5 "IndexBL"\cf3 );\par
+    \}\f2\par
+\par
+
+\pard\sb100\cf0\highlight0\ul\fs18 Part 14 \ulnone Mapping asp.net request data to controller action simple parameter types\par
+
+\pard\li720\sb100\cf1\highlight2\fs19 // could pass in parameters as well.. easier way yet still in next video\f1\par
+public\cf3  \cf8 ActionResult\cf3  Create(\cf8\f2 string \cf5\f1 NameFirst\cf8\f2 , ... datetime DateofBirth\cf3\f1 )\par
+\f2\{\par
+\tab\f1 employee.NameFirst \f2  = \cf5\f1 NameFirst\par
+\f2\tab\cf3\f1 employee.DateOfBirth \f2 = \cf8 DateofBirth\cf3\par
+\}\par
+or\par
+\cf1\f1 public\cf3  \cf8 ActionResult\cf3  Create(\cf8\f2 Employee \cf0 employee\cf3\f1 )\par
+\f2\{\par
+
+\pard\sl240\slmult1\cf1\tab  \f1 if\cf3  (ModelState.IsValid)\par
+        \{\par
+\cf8\f2\tab   \f1 EmployeeBusinessLayer\cf3  employeeBusinessLayer = \cf1 new\cf3  \cf8 EmployeeBusinessLayer\cf3 ();\par
+        employeeBusinessLayer.AddEmployee(employee);\f2\par
+
+\pard\li720\sb100   \}\par
+\}\cf0\highlight0\f4\fs24\par
+
+\pard\sl240\slmult1\cf3\highlight2\f2\fs19\par
+\ul Part 15 \ulnone update model\par
+    \f1 [\cf8 HttpPost\cf3 ]\par
+    [\cf8 ActionName\cf3 (\cf5 "Create"\cf3 )]\par
+    \cf1 public\cf3  \cf8 ActionResult\cf3  Create_Post()\par
+    \{\par
+        \cf1 if\cf3  (ModelState.IsValid)\par
+        \{\par
+            BusinessLayer.\cf8 Employee\cf3  employee = \cf1 new\cf3  BusinessLayer.\cf8 Employee\cf3 ();\par
+            \cf4 // bind the 'post' form data with the object\par
+\f2\tab      // UpdateModel function inspects all the httprequest inputs -\par
+\tab     // Formdata, QueryString, cookies, server variables, and populates the employee object\cf3\f1\par
+            UpdateModel(employee);\par
+\par
+            \cf8 EmployeeBusinessLayer\cf3  employeeBusinessLayer = \cf1 new\cf3  \cf8 EmployeeBusinessLayer\cf3 ();\par
+            \cf4 // method AddEmployee in employeeBusinessLayer\cf3\par
+            employeeBusinessLayer.AddEmployee(employee);\par
+            \cf1 return\cf3  RedirectToAction(\cf5 "IndexBL"\cf3 );\par
+        \}\par
+        \cf1 return\cf3  View();\par
+    \}\f2\par
+\par
+\ul Part 16\ulnone : diff between updateModel and tryUpdate Model\par
+UpdateModel() throws and exception if validation fails\par
+TryUpdateModel() does not\par
+\par
+Part 17: Editing a model\par
+Part 18: \par
+Part 19: \par
+Part 20: \par
+\par
+\par
+============================================================================================\par
+\par
+\ul Shortcuts\ulnone :\par
+Ctrl + G  = GoToLine #\par
+\par
+\par
+\par
+\par
+\par
 \par
 \par
 \par

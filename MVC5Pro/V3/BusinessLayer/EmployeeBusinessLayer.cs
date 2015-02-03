@@ -36,13 +36,66 @@ namespace BusinessLayer
                         employee.NameLast = rdr["NameLast"].ToString();
                         employee.gender = rdr["Gender"].ToString();
                         employee.city = rdr["City"].ToString();
-                        employee.DateOfBirth = Convert.ToDateTime(rdr["DateOfBirth"]);
+                        if (!(rdr["DateOfBirth"] is DBNull)) 
+                        {
+                            employee.DateOfBirth = Convert.ToDateTime(rdr["DateOfBirth"]);
+                        }
+                        
 
                         employees.Add(employee);
                     }
                 }
 
                 return employees;
+            }
+        }
+
+        public void AddEmployee(Employee employee)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["EmployeeContext"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("spAddEmployee", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter paramNameF = new SqlParameter();
+                paramNameF.ParameterName = "@NameFirst";
+                paramNameF.Value = employee.NameFirst;
+                cmd.Parameters.Add(paramNameF);
+
+                SqlParameter paramNameL = new SqlParameter();
+                paramNameL.ParameterName = "@NameLast";
+                paramNameL.Value = employee.NameLast;
+                cmd.Parameters.Add(paramNameL);
+
+                SqlParameter paramGender = new SqlParameter();
+                paramGender.ParameterName = "@gender";
+                paramGender.Value = employee.gender;
+                cmd.Parameters.Add(paramGender);
+
+                SqlParameter paramcity = new SqlParameter();
+                paramcity.ParameterName = "@city";
+                paramcity.Value = employee.city;
+                cmd.Parameters.Add(paramcity);
+
+                SqlParameter paramage = new SqlParameter();
+                paramage.ParameterName = "@age";
+                paramage.Value = employee.age;
+                cmd.Parameters.Add(paramage);
+
+                SqlParameter paramDeptID = new SqlParameter();
+                paramDeptID.ParameterName = "@DepartmentID";
+                paramDeptID.Value = employee.DepartmentID;
+                cmd.Parameters.Add(paramDeptID);
+
+                SqlParameter paramDOB = new SqlParameter();
+                paramDOB.ParameterName = "@DateOfBirth";
+                paramDOB.Value = employee.DateOfBirth;
+                cmd.Parameters.Add(paramDOB);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
             }
         }
     }
