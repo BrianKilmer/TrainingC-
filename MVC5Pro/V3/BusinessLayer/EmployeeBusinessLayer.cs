@@ -98,5 +98,59 @@ namespace BusinessLayer
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void SaveEmployee(Employee employee)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["EmployeeContext"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("spSaveEmployee2", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter paramId = new SqlParameter();
+                paramId.ParameterName = "@Id";
+                paramId.Value = employee.id;
+                cmd.Parameters.Add(paramId);
+
+                SqlParameter paramNameF = new SqlParameter();
+                paramNameF.ParameterName = "@NameFirst";
+                paramNameF.Value = employee.NameFirst;
+                cmd.Parameters.Add(paramNameF);
+
+                SqlParameter paramNameL = new SqlParameter();
+                paramNameL.ParameterName = "@NameLast";
+                paramNameL.Value = employee.NameLast;
+                cmd.Parameters.Add(paramNameL);
+
+                SqlParameter paramGender = new SqlParameter();
+                paramGender.ParameterName = "@gender";
+                paramGender.Value = employee.gender;
+                cmd.Parameters.Add(paramGender);
+
+                SqlParameter paramcity = new SqlParameter();
+                paramcity.ParameterName = "@city";
+                paramcity.Value = employee.city;
+                cmd.Parameters.Add(paramcity);
+
+                SqlParameter paramage = new SqlParameter();
+                paramage.ParameterName = "@age";
+                paramage.Value = employee.age;
+                cmd.Parameters.Add(paramage);
+
+                SqlParameter paramDeptID = new SqlParameter();
+                paramDeptID.ParameterName = "@DepartmentID";
+                paramDeptID.Value = employee.DepartmentID;
+                cmd.Parameters.Add(paramDeptID);
+
+                SqlParameter paramDOB = new SqlParameter();
+                paramDOB.ParameterName = "@DateOfBirth";
+                paramDOB.Value = employee.DateOfBirth;
+                cmd.Parameters.Add(paramDOB);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

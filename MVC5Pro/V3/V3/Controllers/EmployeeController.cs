@@ -66,13 +66,39 @@ namespace V3.Controllers
             // bind the 'post' form data with the object
             // UpdateModel function inspects all the httpRequest inputs -
             // FormData, QueryString, cookies, server variables, and populates the employee object
-            UpdateModel(employee);
+            TryUpdateModel(employee);
 
             if (ModelState.IsValid)
             {
                 EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
                 // method AddEmployee in employeeBusinessLayer
                 employeeBusinessLayer.AddEmployee(employee);
+                return RedirectToAction("IndexBL");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+            // property that gets list of employees from employeeBusinessLayer.Employees, 
+            // and filters to the id passed to this view
+            BusinessLayer.Employee employee = employeeBusinessLayer.Employees.Single(emp => emp.id == id);
+            return View(employee);
+        }
+
+        [HttpPost]
+        [ActionName("Edit")]
+        public ActionResult Edit_Post(int id)
+        {
+            EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+            BusinessLayer.Employee employee = employeeBusinessLayer.Employees.Single(x => x.id == id);
+            UpdateModel(employee, new string[] {"id","city","NameLast","DateOfBirth","DepartmentID","age"});
+
+            if (ModelState.IsValid)
+            {
+                employeeBusinessLayer.SaveEmployee(employee);
                 return RedirectToAction("IndexBL");
             }
             return View();
