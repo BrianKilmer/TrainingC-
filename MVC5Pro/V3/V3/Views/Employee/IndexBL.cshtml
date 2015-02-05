@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<BusinessLayer.Employee>
 
 @{
-    ViewBag.Title = "IndexBL";
+    ViewBag.Title = "Employee Details";
 }
 
-<h2>IndexBL</h2>
+<h2>Employee Details</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" border="1">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.NameFirst)
@@ -32,7 +32,9 @@
         <th>
             @Html.DisplayNameFor(model => model.DateOfBirth)
         </th>
-        <th></th>
+        <th>
+            Action
+        </th>
     </tr>
 
 @foreach (var item in Model) {
