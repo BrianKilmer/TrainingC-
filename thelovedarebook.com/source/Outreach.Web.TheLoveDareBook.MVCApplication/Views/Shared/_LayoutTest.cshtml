@@ -1,0 +1,103 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/favicon.ico")" />
+    @RenderSection("head", false)
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    @Styles.Render("~/content/base.css")
+    @RenderSection("styles", false)
+    @Scripts.Render("~/scripts/prebody.js")
+</head>
+<body>
+    <div class="container">
+
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <img src="~/Content/images/love-dare-header.jpg" style="width:960px " alt="about the love dare book" class="img-responsive img-rounded" />
+                <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbarNav" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                @*<div class="bs-example"><button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>*@
+                    @*<div class="container-fluid">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary col-md-3">About the Love Dare</button>
+                            <button type="button" class="btn btn-primary col-md-3">Sample Chapter</button>
+                            <button type="button" class="btn btn-primary col-md-3">About Fireproof The movie</button>
+                            <button type="button" class="btn btn-primary col-md-3">Purchase Book</button>
+                        </div>
+                    </div>*@
+
+                        @*<div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="">About the Love Dare</a></li>
+                                <li><a href="~/content/love-dare-sample-chapter.pdf" target="_blank">Sample Chapter</a></li>
+                                <li><a href="about">About Fireproof The movie</a></li>
+                                <li><a href="http://www.outreach.com/print/DetailPage.asp?R=9497&amp;sourcecode=08W243">Purchase Book</a></li>
+                            </ul>
+                        </div>*@<!--/.nav-collapse -->
+                
+                <div class="collapse navbar-collapse navbarNav" id="myNav">
+                    <ul class="nav nav-justified">
+                        <li class="active"><a href="">About the Love Dare</a></li>
+                        <li><a href="~/content/love-dare-sample-chapter.pdf" target="_blank">Sample Chapter</a></li>
+                        <li><a href="about">About Fireproof The movie</a></li>
+                        <li><a href="http://www.outreach.com/print/DetailPage.asp?R=9497&amp;sourcecode=08W243">Purchase Book</a></li>
+                    </ul>
+                </div>
+
+
+
+
+                    @*</div>*@<!--/.container-fluid -->
+        </nav>
+
+        @RenderBody()
+
+    </div> <!-- /container -->
+
+
+    
+    @*<div id="footer">
+        <br />
+        FIREPROOF &copy; 2008 Sony Pictures Home Entertainment. All Rights Reserved.<br />
+        While all of the resources on this site (and the ministries that provide them) advocate a biblical approach to <br />
+        building healthy marriages, their viewpoints are not necessarily those of the filmmakers.
+        <br />
+        <div align="center" style="margin-top: 5px;">FireproofMarriage.com, Copyright &copy; 2008 <a href="http://www.outreach.com">Outreach, Inc.</a>  All Rights Reserved.</div>
+    </div>*@
+    <div class="bottom">
+        <div class="container">
+            <div class="col-md-12">
+                <hr />
+                FIREPROOF &copy;@DateTime.Now.Year Sony Pictures Home Entertainment. All Rights Reserved.<br />
+                While all of the resources on this site (and the ministries that provide them) advocate a biblical approach to <br />
+                building healthy marriages, their viewpoints are not necessarily those of the filmmakers.
+                <br />
+                <div align="center" style="margin-top: 5px;">FireproofMarriage.com, Copyright &copy; 2008 <a href="http://www.outreach.com">Outreach, Inc.</a>  All Rights Reserved.</div>
+                <br />
+            </div>
+        </div>
+    </div>
+    
+</body>
+@Scripts.Render("~/scripts/postbody.js")
+@RenderSection("scripts", false)
+</html>
