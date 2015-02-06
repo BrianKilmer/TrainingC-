@@ -1,7 +1,18 @@
 ﻿@{
     Layout = null;
+    string Active1 = "";
+    string Active2 = "";
+    if (ViewBag.Title == "Index")
+    {
+        Active1 = "active";
+        Active2 = "";
+    }
+    if (ViewBag.Title == "About")
+    {
+        Active1 = "";
+        Active2 = "active";
+    }
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -54,12 +65,13 @@
                             </ul>
                         </div>*@<!--/.nav-collapse -->
                 
+                
                 <div class="collapse navbar-collapse navbarNav" id="myNav">
                     <ul class="nav nav-justified">
-                        <li class="active"><a href="">About the Love Dare</a></li>
-                        <li><a href="~/content/love-dare-sample-chapter.pdf" target="_blank">Sample Chapter</a></li>
-                        <li><a href="about">About Fireproof The movie</a></li>
-                        <li><a href="http://www.outreach.com/print/DetailPage.asp?R=9497&amp;sourcecode=08W243">Purchase Book</a></li>
+                        <li id="Li1" class="@Active1">@Html.ActionLink("About the Love Dare", "", null, new {id = "Li1"  })</li>
+                        <li><a href="~/content/love-dare-sample-chapter.pdf" target="_blank" id="Li1">Sample Chapter</a></li>
+                        <li id="Li1" class="@Active2">@Html.ActionLink("About Fireproof The Movie", "About", null, new { id = "Li1" })</li>
+                        <li><a href="http://www.outreach.com/print/DetailPage.asp?R=9497&amp;sourcecode=08W243" id="Li1">Purchase Book</a></li>
                     </ul>
                 </div>
 

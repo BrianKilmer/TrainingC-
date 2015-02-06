@@ -3671,7 +3671,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #eee;
+  background-color: #fff;
   border-color: #337ab7;
 }
 .nav .nav-divider {
@@ -4163,10 +4163,15 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #790000; /*change*/
+  background-color: #790000; /*change 790000*/
   border-color: #e7e7e7;
   color: #fff /*change*/
 }
+
+.navbar-default .active {
+    background-color: #eee;  /*New*/
+}
+
 .navbar-default .navbar-brand {
   color: #777;
 }
@@ -4192,6 +4197,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #555;
   background-color: #e7e7e7;
 }
+
+
+
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {
@@ -6333,5 +6341,9 @@ button.close {
   }
 }
 .container { max-width: 940px; }
-#myNav li { border-left: 1px solid #ccc; }
+#myNav li { border-left: 1px solid #ccc; color:#fff}
 #myNav li:first-child { border: none; }
+#Li1 {color:#f2aa2a !important; text-decoration:none;}
+/*#Li1 > .active {
+    background-color:#fff
+}*/
