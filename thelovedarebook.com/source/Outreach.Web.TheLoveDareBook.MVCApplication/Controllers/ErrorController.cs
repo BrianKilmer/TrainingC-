@@ -6,25 +6,20 @@ using System.Web.Mvc;
 
 namespace Outreach.Web.Controllers
 {
-    public class HomeController : Controller
+    public class ErrorController : Controller
     {
         //
-        // GET: /Home/
+        // GET: /Error/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult About()
+        public ActionResult NotFound()
         {
             return View();
         }
 
-        public ActionResult Test()
+        public ActionResult ServerError()
         {
             return View();
         }
-        
-        
+
     }
 }
