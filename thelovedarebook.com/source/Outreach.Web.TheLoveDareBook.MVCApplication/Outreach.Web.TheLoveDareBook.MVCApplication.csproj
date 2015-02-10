@@ -150,6 +150,9 @@
     <Content Include="Content\images\about-fireproof-movie.jpg" />
     <Content Include="Content\images\about-the-love-dare.jpg" />
     <Content Include="Content\images\alex-stephen-kendrick.jpg" />
+    <Content Include="Content\images\book logos.jpg" />
+    <Content Include="Content\images\booklogos.jpg" />
+    <Content Include="Content\images\booklogos2.jpg" />
     <Content Include="Content\images\couples-kit.jpg" />
     <Content Include="Content\images\fireproof-couples-kit.jpg" />
     <Content Include="Content\images\fireproof-couples-kit2.jpg" />
@@ -169,8 +172,10 @@
     <Content Include="Content\images\order-now.jpg" />
     <Content Include="Content\images\outreach_logo.gif" />
     <Content Include="Content\images\outreach_logo.gif.png" />
+    <Content Include="Content\images\ProvidentFilms.jpg" />
     <Content Include="Content\images\purchase-book.jpg" />
     <Content Include="Content\images\sample-chapter.jpg" />
+    <Content Include="Content\images\Sherwood pictures2.jpg" />
     <Content Include="Content\images\the-love-dare-book_shopping.jpg" />
     <Content Include="Content\images\thebible-ad.jpg" />
     <Content Include="Content\images\video-background.jpg" />
